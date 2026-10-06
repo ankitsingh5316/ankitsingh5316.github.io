@@ -1,0 +1,124 @@
+.page-title-area {
+    background-color: var(--optional-color);
+    position: relative;
+    z-index: 1;
+    padding: {
+        top: 200px;
+        bottom: 90px;
+    };
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: .6;
+        height: 100%;
+        z-index: -1;
+        animation: animatedBackground 15s linear infinite;
+        background: {
+            image: url(../../../../public/img/bg_lines.svg);
+            position: center center;
+            repeat: repeat;
+            size: cover;
+        };
+    }
+    &::after {
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        content: '';
+        height: 92.5px;
+        position: absolute;
+        background-color: var(--white-color);
+    }
+}
+.page-title-content {
+    text-align: center;
+
+    h2 {
+        color: var(--white-color);
+        margin-bottom: 0;
+        font: {
+            size: 40px;
+            weight: 600;
+        };
+    }
+    p {
+        color: var(--white-color);
+        margin: {
+            top: 15px;
+            bottom: 0;
+        };
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .page-title-area {
+        padding: {
+            top: 60px;
+            bottom: 50px;
+        };
+        &::after {
+            display: none;
+        }
+    }
+    .page-title-content {
+        h2 {
+            font-size: 30px;
+        }
+        p {
+            margin-top: 10px;
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .page-title-area {
+        padding: {
+            top: 80px;
+            bottom: 70px;
+        };
+        &::after {
+            display: none;
+        }
+    }
+    .page-title-content {
+        h2 {
+            font-size: 30px;
+        }
+        p {
+            margin-top: 10px;
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .page-title-area {
+        padding-top: 100px;
+        
+        &::after {
+            display: none;
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

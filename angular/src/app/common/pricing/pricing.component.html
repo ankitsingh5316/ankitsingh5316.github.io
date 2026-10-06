@@ -1,0 +1,181 @@
+<div class="pricing-area pt-100 pb-70 bg-f4f5fe">
+    <div class="container">
+        <div class="section-title">
+            <h2>Choose the pricing plan</h2>
+        </div>
+        <div class="pricing-list-tab">
+            <ul class="tabs">
+                <li><button type="button" (click)="switchTab($event, 'tab1')" [ngClass]="{'active': currentTab === 'tab1'}">
+                    <i class="bx bxs-calendar-check"></i> Monthly
+                </button></li>
+                <li><button type="button" (click)="switchTab($event, 'tab2')" [ngClass]="{'active': currentTab === 'tab2'}">
+                    <i class="bx bxs-calendar-check"></i> Yearly
+                </button></li>
+            </ul>
+            <div id="tab1" *ngIf="currentTab === 'tab1'">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-pricing-table">
+                            <div class="pricing-header">
+                                <h3>Free</h3>
+                            </div>
+                            <div class="price">
+                                <sup>$</sup>0<sub>/m</sub>
+                            </div>
+                            <ul class="pricing-features">
+                                <li><i class="bx bxs-badge-check"></i> Up to 3 chat operators</li>
+                                <li><i class="bx bxs-badge-check"></i> 100 ChatBot Triggers</li>
+                                <li><i class="bx bxs-badge-check"></i> 24/7 Live Chat</li>
+                                <li><i class="bx bxs-badge-check"></i> Email Integration</li>
+                                <li><i class="bx bxs-badge-check"></i> Messenger Integration</li>
+                                <li><i class="bx bxs-badge-check"></i> Visitor Info</li>
+                                <li><i class="bx bxs-badge-check"></i> Mobile + Desktop Apps</li>
+                                <li><i class="bx bxs-badge-check"></i> Quick Responses</li>
+                                <li><i class="bx bxs-badge-check"></i> Drag & Drop Widgets</li>
+                                <li><i class='bx bx-x'></i> Visitor Notes</li>
+                                <li><i class='bx bx-x'></i> Google Analytics</li>
+                            </ul>
+                            <div class="btn-box">
+                                <a routerLink="." class="default-btn"><i class="bx bxs-hot"></i> Try It Free Now <span></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-pricing-table">
+                            <div class="pricing-header">
+                                <h3>Starter</h3>
+                            </div>
+                            <div class="price">
+                                <sup>$</sup>49<sub>/m</sub>
+                            </div>
+                            <ul class="pricing-features">
+                                <li><i class="bx bxs-badge-check"></i> Up to 4 chat operators</li>
+                                <li><i class="bx bxs-badge-check"></i> 150 ChatBot Triggers</li>
+                                <li><i class="bx bxs-badge-check"></i> 24/7 Live Chat</li>
+                                <li><i class="bx bxs-badge-check"></i> Email Integration</li>
+                                <li><i class="bx bxs-badge-check"></i> Messenger Integration</li>
+                                <li><i class="bx bxs-badge-check"></i> Visitor Info</li>
+                                <li><i class="bx bxs-badge-check"></i> Mobile + Desktop Apps</li>
+                                <li><i class="bx bxs-badge-check"></i> Quick Responses</li>
+                                <li><i class="bx bxs-badge-check"></i> Drag & Drop Widgets</li>
+                                <li><i class="bx bxs-badge-check"></i> Visitor Notes</li>
+                                <li><i class='bx bx-x'></i> Google Analytics</li>
+                            </ul>
+                            <div class="btn-box">
+                                <a routerLink="." class="default-btn"><i class="bx bxs-hot"></i> Try It Free Now <span></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-pricing-table">
+                            <div class="pricing-header">
+                                <h3>Professional</h3>
+                            </div>
+                            <div class="price">
+                                <sup>$</sup>79<sub>/m</sub>
+                            </div>
+                            <ul class="pricing-features">
+                                <li><i class="bx bxs-badge-check"></i> Up to 5 chat operators</li>
+                                <li><i class="bx bxs-badge-check"></i> 200 ChatBot Triggers</li>
+                                <li><i class="bx bxs-badge-check"></i> 24/7 Live Chat</li>
+                                <li><i class="bx bxs-badge-check"></i> Email Integration</li>
+                                <li><i class="bx bxs-badge-check"></i> Messenger Integration</li>
+                                <li><i class="bx bxs-badge-check"></i> Visitor Info</li>
+                                <li><i class="bx bxs-badge-check"></i> Mobile + Desktop Apps</li>
+                                <li><i class="bx bxs-badge-check"></i> Quick Responses</li>
+                                <li><i class="bx bxs-badge-check"></i> Drag & Drop Widgets</li>
+                                <li><i class="bx bxs-badge-check"></i> Visitor Notes</li>
+                                <li><i class="bx bxs-badge-check"></i> Google Analytics</li>
+                            </ul>
+                            <div class="btn-box">
+                                <a routerLink="." class="default-btn"><i class="bx bxs-hot"></i> Try It Free Now <span></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="tab2" *ngIf="currentTab === 'tab2'">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-pricing-table">
+                            <div class="pricing-header">
+                                <h3>Free</h3>
+                            </div>
+                            <div class="price">
+                                <sup>$</sup>0<sub>/y</sub>
+                            </div>
+                            <ul class="pricing-features">
+                                <li><i class="bx bxs-badge-check"></i> Up to 5 chat operators</li>
+                                <li><i class="bx bxs-badge-check"></i> 150 ChatBot Triggers</li>
+                                <li><i class="bx bxs-badge-check"></i> 24/7 Live Chat</li>
+                                <li><i class="bx bxs-badge-check"></i> Email Integration</li>
+                                <li><i class="bx bxs-badge-check"></i> Messenger Integration</li>
+                                <li><i class="bx bxs-badge-check"></i> Visitor Info</li>
+                                <li><i class="bx bxs-badge-check"></i> Mobile + Desktop Apps</li>
+                                <li><i class="bx bxs-badge-check"></i> Quick Responses</li>
+                                <li><i class="bx bxs-badge-check"></i> Drag & Drop Widgets</li>
+                                <li><i class='bx bx-x'></i> Visitor Notes</li>
+                                <li><i class='bx bx-x'></i> Google Analytics</li>
+                            </ul>
+                            <div class="btn-box">
+                                <a routerLink="." class="default-btn"><i class="bx bxs-hot"></i> Try It Free Now <span></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-pricing-table">
+                            <div class="pricing-header">
+                                <h3>Starter</h3>
+                            </div>
+                            <div class="price">
+                                <sup>$</sup>79<sub>/y</sub>
+                            </div>
+                            <ul class="pricing-features">
+                                <li><i class="bx bxs-badge-check"></i> Up to 6 chat operators</li>
+                                <li><i class="bx bxs-badge-check"></i> 200 ChatBot Triggers</li>
+                                <li><i class="bx bxs-badge-check"></i> 24/7 Live Chat</li>
+                                <li><i class="bx bxs-badge-check"></i> Email Integration</li>
+                                <li><i class="bx bxs-badge-check"></i> Messenger Integration</li>
+                                <li><i class="bx bxs-badge-check"></i> Visitor Info</li>
+                                <li><i class="bx bxs-badge-check"></i> Mobile + Desktop Apps</li>
+                                <li><i class="bx bxs-badge-check"></i> Quick Responses</li>
+                                <li><i class="bx bxs-badge-check"></i> Drag & Drop Widgets</li>
+                                <li><i class="bx bxs-badge-check"></i> Visitor Notes</li>
+                                <li><i class='bx bx-x'></i> Google Analytics</li>
+                            </ul>
+                            <div class="btn-box">
+                                <a routerLink="." class="default-btn"><i class="bx bxs-hot"></i> Try It Free Now <span></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-pricing-table">
+                            <div class="pricing-header">
+                                <h3>Professional</h3>
+                            </div>
+                            <div class="price">
+                                <sup>$</sup>99<sub>/y</sub>
+                            </div>
+                            <ul class="pricing-features">
+                                <li><i class="bx bxs-badge-check"></i> Up to 7 chat operators</li>
+                                <li><i class="bx bxs-badge-check"></i> 250 ChatBot Triggers</li>
+                                <li><i class="bx bxs-badge-check"></i> 24/7 Live Chat</li>
+                                <li><i class="bx bxs-badge-check"></i> Email Integration</li>
+                                <li><i class="bx bxs-badge-check"></i> Messenger Integration</li>
+                                <li><i class="bx bxs-badge-check"></i> Visitor Info</li>
+                                <li><i class="bx bxs-badge-check"></i> Mobile + Desktop Apps</li>
+                                <li><i class="bx bxs-badge-check"></i> Quick Responses</li>
+                                <li><i class="bx bxs-badge-check"></i> Drag & Drop Widgets</li>
+                                <li><i class="bx bxs-badge-check"></i> Visitor Notes</li>
+                                <li><i class="bx bxs-badge-check"></i> Google Analytics</li>
+                            </ul>
+                            <div class="btn-box">
+                                <a routerLink="." class="default-btn"><i class="bx bxs-hot"></i> Try It Free Now <span></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

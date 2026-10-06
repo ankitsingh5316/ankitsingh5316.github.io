@@ -1,0 +1,162 @@
+<app-navbar-one />
+
+<app-page-banner
+    [pageTitle]="'Contact Us'"
+    [pageSubTitle]="'Drop us message for any Query'"
+/>
+
+<!-- Contact Us -->
+<div class="contact-area ptb-100">
+    <div class="container">
+        <div class="contact-inner">
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <div class="contact-features-list">
+                        <h3>{{ contactData?.choose?.title }}</h3>
+                        <p>{{ contactData?.choose?.subtitle }}</p>
+                        <p>{{ contactData?.choose?.description }}</p>
+                        <!-- <ul>
+                            <li><i class='bx bx-support'></i> 24/7 Support with Global Reach</li>
+                            <li><i class='bx bx-line-chart'></i> Flexible plans that grow with your business</li>
+                            <li><i class='bx bx-file'></i> No long-term contracts required</li>
+                            <li><i class='bx bx-briefcase'></i> Industry-specific solutions for your unique needs</li>
+                            <li><i class='bx bx-user-check'></i> Hire based on specific industry or technical expertise</li>
+                        </ul> -->
+
+                        <ul>
+                            <li
+                                class="mb-2"
+                                *ngFor="let item of contactData?.choose?.items"
+                            >
+                                <i class="bx bx-user-check"></i>{{ item }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="contact-form">
+                        <h3>{{ contactData?.trailsScetion?.title }}</h3>
+                        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" id="contactForm">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="form-group">
+                                        <input
+                                            type="text"
+                                            formControlName="name"
+                                            id="name"
+                                            class="form-control"
+                                            placeholder="Your Name"
+                                            [class.is-invalid]="isFieldInvalid('name')"
+                                        />
+                                        <div class="invalid-feedback" *ngIf="isFieldInvalid('name')">
+                                            {{ getErrorMessage('name') }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="form-group">
+                                        <input
+                                            type="email"
+                                            formControlName="email"
+                                            id="email"
+                                            class="form-control"
+                                            placeholder="Your Email"
+                                            [class.is-invalid]="isFieldInvalid('email')"
+                                        />
+                                        <div class="invalid-feedback" *ngIf="isFieldInvalid('email')">
+                                            {{ getErrorMessage('email') }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="form-group">
+                                        <input
+                                            type="text"
+                                            formControlName="phone_number"
+                                            id="phone_number"
+                                            class="form-control"
+                                            placeholder="Your Phone"
+                                            [class.is-invalid]="isFieldInvalid('phone_number')"
+                                        />
+                                        <div class="invalid-feedback" *ngIf="isFieldInvalid('phone_number')">
+                                            {{ getErrorMessage('phone_number') }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="form-group">
+                                        <input
+                                            type="text"
+                                            formControlName="msg_subject"
+                                            id="msg_subject"
+                                            class="form-control"
+                                            placeholder="Your Subject"
+                                            [class.is-invalid]="isFieldInvalid('msg_subject')"
+                                        />
+                                        <div class="invalid-feedback" *ngIf="isFieldInvalid('msg_subject')">
+                                            {{ getErrorMessage('msg_subject') }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="form-group">
+                                        <textarea
+                                            formControlName="message"
+                                            class="form-control"
+                                            id="message"
+                                            cols="30"
+                                            rows="6"
+                                            placeholder="Your Message"
+                                            [class.is-invalid]="isFieldInvalid('message')"
+                                        ></textarea>
+                                        <div class="invalid-feedback" *ngIf="isFieldInvalid('message')">
+                                            {{ getErrorMessage('message') }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12">
+                                    <button type="submit" class="default-btn" [disabled]="contactForm.invalid">
+                                        <i class="bx bxs-paper-plane"></i>Send
+                                        Message<span></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-info" *ngIf="contactData?.contactInfo">
+                <div class="contact-info-content">
+                    <h3>{{ contactData?.contactInfo?.title }}</h3>
+                    <h2>
+                        <a [href]="'tel:' + contactData?.contactInfo?.phone">
+                            {{ contactData?.contactInfo?.phone }}
+                        </a>
+                        <span>OR</span>
+                        <a [href]="'mailto:' + contactData?.contactInfo?.email">
+                            {{ contactData?.contactInfo?.email }}
+                        </a>
+                    </h2>
+
+                    <ul class="social">
+                        <li
+                            *ngFor="
+                                let social of contactData?.contactInfo?.social
+                            "
+                        >
+                            <a [href]="social.url" target="_blank">
+                                <i [class]="social.icon"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-clients />
+
+<app-footer />
+
+<app-back-to-top />

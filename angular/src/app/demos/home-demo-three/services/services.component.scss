@@ -1,0 +1,98 @@
+@use "../../../common/services/services.component.scss" as *;
+
+
+.services-area {
+  background-color: #f4f6fc;
+  padding: 80px 0;
+
+  .section-title {
+    text-align: center;
+    margin-bottom: 50px;
+
+    h2 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #222222;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #555555;
+    }
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+
+    .service-card {
+      background: #ffffff;
+      padding: 25px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      transition: all 0.3s ease-in-out;
+
+      h3 {
+        font-size: 20px;
+        font-weight: 600;
+        color: #0056b3;
+        margin-bottom: 12px;
+      }
+
+      p {
+        font-size: 14px;
+        color: #555555;
+        margin-bottom: 15px;
+        line-height: 1.6;
+      }
+
+      ul {
+        padding-left: 20px;
+         list-style: none;
+        li {
+          font-size: 14px;
+          color: #444444;
+          margin-bottom: 8px;
+          position: relative;
+          &:before {
+            content: "✔";
+            color: #0056b3;
+            position: absolute;
+            left: -20px;
+          }
+        }
+      }
+
+      &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        h3 {
+          color: #004494;
+        }
+      }
+    }
+  }
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 991px) {
+  .services-area {
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .services-area {
+    padding: 50px 0;
+    .section-title h2 {
+      font-size: 26px;
+    }
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}

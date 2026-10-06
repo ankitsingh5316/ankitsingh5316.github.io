@@ -1,0 +1,39 @@
+<section id="experience" class="experience section" aria-labelledby="experience-heading">
+  <div class="container">
+    <div class="section-header" appScrollReveal="fade-up">
+      <span class="section-label">Experience</span>
+      <h2 id="experience-heading" class="section-title">Where I've worked.</h2>
+      <p class="section-subtitle">
+        Professional experience building and shipping production frontend applications.
+      </p>
+    </div>
+
+    <div class="timeline">
+      @for (item of experience; track item.company; let i = $index) {
+        <article
+          class="timeline-item card"
+          appScrollReveal="fade-up"
+          [revealDelay]="i * 120"
+        >
+          <div class="timeline-header">
+            <div class="timeline-heading">
+              <h3 class="timeline-company">{{ item.company }}</h3>
+              <p class="timeline-role">{{ item.role }}</p>
+            </div>
+            <span class="timeline-period badge badge--accent">{{ item.period }}</span>
+          </div>
+          <ul class="timeline-list">
+            @for (resp of item.responsibilities; track resp) {
+              <li>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M2 7l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                {{ resp }}
+              </li>
+            }
+          </ul>
+        </article>
+      }
+    </div>
+  </div>
+</section>

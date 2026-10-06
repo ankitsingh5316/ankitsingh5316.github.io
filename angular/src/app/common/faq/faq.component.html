@@ -1,0 +1,159 @@
+<div
+    class="faq-area ptb-100"
+    [ngClass]="{'bg-color-f4f5fe': router.url === '/index-2' || router.url === '/index-6'}"
+>
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-7 col-md-12">
+                <div class="faq-accordion">
+                    <h2>Frequently Asked Questions <span>(FAQ)</span></h2>
+                    <ul class="accordion">
+                        <li class="accordion-item" id="panel1">
+                            <button type="button" class="accordion-title" (click)="togglePanel('panel1')">
+                                <i [class]="activePanelId === 'panel1' ? 'bx bx-minus' : 'bx bx-plus'"></i>
+                                How does voice broadcasting work, and what industries can benefit from it?
+                            </button>
+                            <div class="accordion-content" *ngIf="activePanelId === 'panel1'">
+                                <p>
+                                    Voice broadcasting allows you to send pre-recorded voice messages to thousands of contacts at once. It’s widely used in industries like retail, healthcare, education, real estate, and political campaigns.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="accordion-item" id="panel2">
+                            <button type="button" class="accordion-title" (click)="togglePanel('panel2')">
+                                <i [class]="activePanelId === 'panel2' ? 'bx bx-minus' : 'bx bx-plus'"></i>
+                                Can I send both promotional and transactional SMS with your service?
+                            </button>
+                            <div class="accordion-content" *ngIf="activePanelId === 'panel2'">
+                                <p>
+                                    Yes. We provide solutions for both types of SMS — promotional for marketing campaigns and transactional for alerts, reminders, and critical updates.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="accordion-item" id="panel3">
+                            <button type="button" class="accordion-title" (click)="togglePanel('panel3')">
+                                <i [class]="activePanelId === 'panel3' ? 'bx bx-minus' : 'bx bx-plus'"></i>
+                                What makes your email broadcasting more effective than regular bulk email tools?
+                            </button>
+                            <div class="accordion-content" *ngIf="activePanelId === 'panel3'">
+                                <p>
+                                    Our email broadcasting platform is optimized for high inbox delivery, offers customizable templates, real-time tracking, and integrates seamlessly with CRM systems for targeted campaigns.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="accordion-item" id="panel4">
+                            <button type="button" class="accordion-title" (click)="togglePanel('panel4')">
+                                <i [class]="activePanelId === 'panel4' ? 'bx bx-minus' : 'bx bx-plus'"></i>
+                                Do you provide support for setting up IP PBX systems at offices?
+                            </button>
+                            <div class="accordion-content" *ngIf="activePanelId === 'panel4'">
+                                <p>
+                                    Absolutely. We help businesses install, configure, and maintain IP PBX systems — ensuring seamless call routing, IVR setup, voicemail integration, and multi-device connectivity.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="accordion-item" id="panel5">
+                            <button type="button" class="accordion-title" (click)="togglePanel('panel5')">
+                                <i [class]="activePanelId === 'panel5' ? 'bx bx-minus' : 'bx bx-plus'"></i>
+                                How secure is your fax broadcasting solution compared to traditional fax?
+                            </button>
+                            <div class="accordion-content" *ngIf="activePanelId === 'panel5'">
+                                <p>
+                                    Our digital faxing is encrypted, reliable, and faster than traditional fax machines. You can send and receive documents securely via email or web without worrying about data loss.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="accordion-item" id="panel6">
+                            <button type="button" class="accordion-title" (click)="togglePanel('panel6')">
+                                <i [class]="activePanelId === 'panel6' ? 'bx bx-minus' : 'bx bx-plus'"></i>
+                                Can you design and develop a custom website for my business?
+                            </button>
+                            <div class="accordion-content" *ngIf="activePanelId === 'panel6'">
+                                <p>
+                                Yes. We create custom, responsive, and SEO-friendly websites tailored to your business goals — from corporate websites to advanced platforms.
+                                </p>
+                            </div>
+                            </li>
+
+                            <li class="accordion-item" id="panel7">
+                            <button type="button" class="accordion-title" (click)="togglePanel('panel7')">
+                                <i [class]="activePanelId === 'panel7' ? 'bx bx-minus' : 'bx bx-plus'"></i>
+                                Do you also create eCommerce websites with online payment integration?
+                            </button>
+                            <div class="accordion-content" *ngIf="activePanelId === 'panel7'">
+                                <p>
+                                Yes. We develop fully functional eCommerce stores with features like product catalogs, shopping carts, payment gateways, and order management.
+                                </p>
+                            </div>
+                            </li>
+
+                            <li class="accordion-item" id="panel8">
+                            <button type="button" class="accordion-title" (click)="togglePanel('panel8')">
+                                <i [class]="activePanelId === 'panel8' ? 'bx bx-minus' : 'bx bx-plus'"></i>
+                                Will my website be SEO-friendly and mobile responsive?
+                            </button>
+                            <div class="accordion-content" *ngIf="activePanelId === 'panel8'">
+                                <p>
+                                Definitely. All websites we deliver are optimized for SEO, speed, and mobile responsiveness, ensuring better visibility and user experience.
+                                </p>
+                            </div>
+                            </li>
+
+                            <li class="accordion-item" id="panel9">
+                            <button type="button" class="accordion-title" (click)="togglePanel('panel9')">
+                                <i [class]="activePanelId === 'panel9' ? 'bx bx-minus' : 'bx bx-plus'"></i>
+                                Do you provide ongoing support and maintenance for websites after launch?
+                            </button>
+                            <div class="accordion-content" *ngIf="activePanelId === 'panel9'">
+                                <p>
+                                Yes. We offer post-launch support including updates, security monitoring, and performance optimization to keep your site running smoothly.
+                                </p>
+                            </div>
+                            </li>
+
+                            <li class="accordion-item" id="panel10">
+                            <button type="button" class="accordion-title" (click)="togglePanel('panel10')">
+                                <i [class]="activePanelId === 'panel10' ? 'bx bx-minus' : 'bx bx-plus'"></i>
+                                Can your digital marketing services help drive traffic to my eCommerce store?
+                            </button>
+                            <div class="accordion-content" *ngIf="activePanelId === 'panel10'">
+                                <p>
+                                Of course. Our SMS, email, and social media marketing campaigns are designed to increase traffic, generate leads, and boost sales for eCommerce businesses.
+                                </p>
+                            </div>
+                            </li>
+
+                            <li class="accordion-item" id="panel11">
+                            <button type="button" class="accordion-title" (click)="togglePanel('panel11')">
+                                <i [class]="activePanelId === 'panel11' ? 'bx bx-minus' : 'bx bx-plus'"></i>
+                                Are your services suitable for startups and small businesses as well as enterprises?
+                            </button>
+                            <div class="accordion-content" *ngIf="activePanelId === 'panel11'">
+                                <p>
+                                Yes. Our solutions are scalable and flexible, making them perfect for startups, SMEs, and large enterprises alike.
+                                </p>
+                            </div>
+                            </li>
+
+                            <li class="accordion-item" id="panel12">
+                            <button type="button" class="accordion-title" (click)="togglePanel('panel12')">
+                                <i [class]="activePanelId === 'panel12' ? 'bx bx-minus' : 'bx bx-plus'"></i>
+                                What kind of customer support do you offer after project delivery?
+                            </button>
+                            <div class="accordion-content" *ngIf="activePanelId === 'panel12'">
+                                <p>
+                                We provide dedicated customer support, including phone, email, and WhatsApp assistance. Our team ensures quick responses and reliable problem resolution.
+                                </p>
+                            </div>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-12">
+                <div class="faq-image">
+                    <img src="img/faq-img1.png" alt="image">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

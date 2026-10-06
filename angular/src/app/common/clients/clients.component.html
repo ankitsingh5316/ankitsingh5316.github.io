@@ -1,0 +1,78 @@
+<!-- <div
+    class="our-loving-clients ptb-100 bg-f4f5fe"
+    [ngClass]="{'bg-white': router.url === '/index-3' || router.url === '/index-6' || router.url === '/index-7'}"
+>
+    <div class="container">
+        <div class="section-title">
+            <h2>Our loving clients</h2>
+        </div>
+        <div class="clients-logo-list align-items-center">
+            <div class="single-clients-logo">
+                <a href="#" target="_blank">
+                    <img src="img/clients-image/img1.png" alt="image">
+                </a>
+            </div>
+            <div class="single-clients-logo">
+                <a href="#" target="_blank">
+                    <img src="img/clients-image/img2.png" alt="image">
+                </a>
+            </div>
+            <div class="single-clients-logo">
+                <a href="#" target="_blank">
+                    <img src="img/clients-image/img3.png" alt="image">
+                </a>
+            </div>
+            <div class="single-clients-logo">
+                <a href="#" target="_blank">
+                    <img src="img/clients-image/img4.png" alt="image">
+                </a>
+            </div>
+            <div class="single-clients-logo">
+                <a href="#" target="_blank">
+                    <img src="img/clients-image/img5.png" alt="image">
+                </a>
+            </div>
+            <div class="single-clients-logo">
+                <a href="#" target="_blank">
+                    <img src="img/clients-image/img6.png" alt="image">
+                </a>
+            </div>
+            <div class="single-clients-logo">
+                <a href="#" target="_blank">
+                    <img src="img/clients-image/img7.png" alt="image">
+                </a>
+            </div>
+            <div class="single-clients-logo">
+                <a href="#" target="_blank">
+                    <img src="img/clients-image/img8.png" alt="image">
+                </a>
+            </div>
+            <div class="single-clients-logo">
+                <a href="#" target="_blank">
+                    <img src="img/clients-image/img9.png" alt="image">
+                </a>
+            </div>
+        </div>
+    </div>
+</div> -->
+<section class="mv-area ptb-100 bg-f8fbfa">
+  <div class="container">
+    <div class="section-title">
+      <h2>{{ aboutData?.missionVision?.heading }}</h2>
+      <p>{{ aboutData?.missionVision?.subheading }}</p>
+    </div>
+
+    <div class="mv-grid">
+      <div class="mv-card"
+           *ngFor="let card of aboutData?.missionVision?.cards"
+           [ngClass]="'mv-' + card.type">
+        
+        <div class="mv-icon">
+          <i [class]="card.icon"></i>
+        </div>
+        <h3>{{ card.title }}</h3>
+        <p>{{ card.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>

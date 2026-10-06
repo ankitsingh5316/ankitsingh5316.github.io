@@ -1,0 +1,95 @@
+<section id="hero" class="hero section" aria-labelledby="hero-heading">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <div class="hero-meta" appScrollReveal="fade-up">
+        <span class="status-pill">Available for opportunities</span>
+      </div>
+
+      <p class="eyebrow" appScrollReveal="fade-up" [revealDelay]="50">Front-End Developer · 2+ Years</p>
+
+      <h1 id="hero-heading" class="hero-title" appScrollReveal="fade-up" [revealDelay]="100">
+        Building interfaces<br>
+        that feel <span class="gradient-text">fast</span>,<br>
+        look <span class="gradient-text">sharp</span>,<br>
+        and work <span class="gradient-text">beautifully</span>.
+      </h1>
+
+      <p class="hero-desc" appScrollReveal="fade-up" [revealDelay]="180">
+        I build production-ready web experiences with Angular and Next.js, focusing on
+        responsive UI, performance, SEO, SSR, and maintainable frontend architecture.
+      </p>
+
+      <div class="hero-cta" appScrollReveal="fade-up" [revealDelay]="260">
+        <button class="btn btn-primary" (click)="scrollTo('#work')">
+          View My Work
+          <svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="btn btn-secondary" (click)="scrollTo('#contact')">Let's Connect</button>
+      </div>
+
+      <div class="hero-stats" appScrollReveal="fade-up" [revealDelay]="340">
+        <div class="hero-stat">
+          <span class="hero-stat-value">2+</span>
+          <span class="hero-stat-label">Years Exp.</span>
+        </div>
+        <div class="hero-stat-divider" aria-hidden="true"></div>
+        <div class="hero-stat">
+          <span class="hero-stat-value">9</span>
+          <span class="hero-stat-label">Production Apps</span>
+        </div>
+        <div class="hero-stat-divider" aria-hidden="true"></div>
+        <div class="hero-stat">
+          <span class="hero-stat-value">Angular</span>
+          <span class="hero-stat-label">& Next.js</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-banner-wrap">
+      <figure class="hero-banner">
+        @if (!bannerError) {
+          <img
+            [src]="bannerSrc"
+            alt="Front-end development visualization — browser interfaces, code editor, components, API and performance metrics"
+            width="1200"
+            height="900"
+            fetchpriority="high"
+            decoding="async"
+            class="hero-banner-img"
+            [class.is-loaded]="bannerLoaded"
+            (load)="onBannerLoad()"
+            (error)="onBannerError()"
+          />
+        } @else {
+          <div class="hero-banner-fallback" role="img" aria-label="Front-end development visualization">
+            <div class="fallback-grid"></div>
+            <div class="fallback-window">
+              <div class="fallback-chrome"></div>
+              <div class="fallback-body"></div>
+            </div>
+          </div>
+        }
+
+        <div class="hero-banner-overlay" aria-hidden="true"></div>
+
+        <div class="banner-badges" aria-hidden="true">
+          @for (tag of floatingTags; track tag.label) {
+            <span
+              class="banner-badge"
+              [style.left.%]="tag.x"
+              [style.top.%]="tag.y"
+              [style.animation-delay.s]="tag.delay"
+            >{{ tag.label }}</span>
+          }
+        </div>
+
+        <div class="banner-metric" aria-hidden="true">
+          <span class="banner-metric-value">98</span>
+          <span class="banner-metric-label">Performance</span>
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>

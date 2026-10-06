@@ -1,0 +1,76 @@
+<div class="video-presentation-area ptb-100">
+  <div class="container">
+    <!-- Industries Section -->
+    <div class="section-title">
+      <h2>{{ aboutData?.industriesSection?.heading }}</h2>
+      <p>{{ aboutData?.industriesSection?.subheading }}</p>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-6"
+           *ngFor="let industry of aboutData?.industriesSection?.industries">
+        <div class="why-choose-card">
+          <i [class]="industry.icon"></i>
+          <h3>{{ industry.title }}</h3>
+          <p>{{ industry.description }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Achievements Section -->
+    <div class="section-title pt-100">
+      <h2>{{ aboutData?.achievementsSection?.heading }}</h2>
+    </div>
+    <div class="funfacts-inner">
+      <div class="row">
+        <div class="col-lg-3 col-6 col-sm-3 col-md-3"
+             *ngFor="let item of aboutData?.achievementsSection?.achievements">
+          <div class="single-funfacts">
+            <i [class]="item.icon"></i>
+            <p [innerHTML]="item.text"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact CTA -->
+    <div class="contact-cta-box">
+      <h3>{{ aboutData?.contactCTA?.heading }}</h3>
+      <p *ngFor="let para of aboutData?.contactCTA?.paragraphs" [innerHTML]="para"></p>
+      <a routerLink="/contact" class="default-btn">
+        <i [class]="aboutData?.contactCTA?.button?.icon"></i>
+        {{ aboutData?.contactCTA?.button?.text }}
+        <span></span>
+      </a>
+      
+    </div>
+  </div>
+
+  <!-- Decorative shapes (static assets, optional) -->
+  <div class="shape-map1"><img src="img/map1.png" alt="image"></div>
+  <div class="shape7"><img src="img/shape/shape7.png" alt="image"></div>
+  <div class="shape8"><img src="img/shape/shape8.png" alt="image"></div>
+  <div class="shape9"><img src="img/shape/shape9.png" alt="image"></div>
+</div>
+
+<!-- Video Popup -->
+<!-- <div class="mfp-wrap mfp-close-btn-in mfp-auto-cursor mfp-fade mfp-ready"
+     *ngIf="isOpen"
+     tabindex="-1">
+  <div class="mfp-container mfp-iframe-holder">
+    <div class="mfp-content">
+      <div class="mfp-iframe-scaler">
+        <button (click)="closePopup()" title="Close (Esc)" type="button" class="mfp-close">
+          ×
+        </button>
+        <iframe
+          [src]="aboutData?.videoPopup?.url | safeUrl"
+          [title]="aboutData?.videoPopup?.title"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>
+</div> -->
+<div class="mfp-bg mfp-fade mfp-ready" *ngIf="isOpen"></div>

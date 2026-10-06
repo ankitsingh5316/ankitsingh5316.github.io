@@ -1,0 +1,119 @@
+.partner-area {
+    .container {
+        max-width: 1290px;
+    }
+    .row {
+        margin: {
+            left: 0;
+            right: 0;
+        };
+        .col-lg-3, .col-lg-9 {
+            padding: {
+                left: 0;
+                right: 0;
+            };
+        }
+    }
+}
+.partner-title {
+    h3 {
+        color: #8791b0;
+        margin-bottom: 0;
+        font: {
+            size: 22px;
+            weight: 500;
+        };
+    }
+}
+.single-partner-item {
+    text-align: start;
+
+    a {
+        display: inline-block;
+
+        img {
+            width: auto !important;
+            transition: var(--transition);
+            display: inline-block !important;
+        }
+        &:hover {
+            img {
+                transform: scale(1.03);
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .partner-area {
+        .container {
+            max-width: 100%;
+        }
+    }
+    .partner-title {
+        text-align: center;
+        margin-bottom: 30px;
+
+        h3 {
+            font-size: 18px;
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+
+    .partner-area {
+        .container {
+            max-width: 540px;
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .partner-area {
+        .container {
+            max-width: 720px;
+        }
+    }
+    .partner-title {
+        text-align: center;
+        margin-bottom: 45px;
+
+        h3 {
+            font-size: 20px;
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .partner-area {
+        .container {
+            max-width: 960px;
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .partner-area {
+        .container {
+            max-width: 1140px;
+        }
+    }
+
+}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

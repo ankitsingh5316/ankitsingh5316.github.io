@@ -1,0 +1,149 @@
+<app-navbar-one />
+
+<app-page-banner [pageTitle]="'Transparent Pricing'" [pageSubTitle]="'Border-less account pricing'" />
+
+<!-----Pricing section---->
+<div class="container mt-4">
+  <div class="card-scroll-wrapper">
+    <div class="row flex-nowrap">
+      <div class="col-lg-2 col-md-2 col-5" *ngFor="let step of pricingData?.serviceSection?.categorey; let i = index">
+        <div class="services-item" [ngClass]="{ 'active-step': selectedStep === i + 1 }" (click)="goToStep(i + 1)">
+          <div class="services-item-img text-center">
+            <a><i class="bi {{step.icon}}"></i></a>
+            <div class="img-circle"></div>
+          </div>
+          <h6>
+            <a>{{ step.label }}</a>
+          </h6>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section content display -->
+  <div class="mt-4">
+    <div class="pricing-area pt-50 pb-100">
+      <div class="container-fluid">
+        <div class="text-center">
+          <h2>{{ pricingData?.planSection?.heading }}</h2>
+          <p>{{ pricingData?.planSection?.subheading }}</p>
+        </div>
+
+        <ng-container *ngFor="let pkg of pricingData?.planSection?.packages">
+          <div *ngIf="selectedStep === pkg.step" class="pricing-container">
+            <h3>{{ pkg.heading }}</h3>
+            <p><strong>{{ pkg.subheading }}</strong></p>
+
+            <div *ngIf="pkg.freePlan" class="included-features">
+              <h4>{{ pkg.freePlan.title }}</h4>
+              <p>
+                {{ pkg.freePlan.description }}
+              </p>
+              <ul>
+                <li *ngFor="let item of pkg.freePlan.features">{{ item }}</li>
+              </ul>
+              <p *ngIf="pkg.freePlan.note">
+                <strong>Note:</strong> {{ pkg.freePlan.note }}
+              </p>
+            </div>
+
+            <!-- Included Features -->
+            <div *ngIf="pkg.included" class="included-features">
+              <h4>{{ pkg.included.title }}</h4>
+              <ul>
+                <li *ngFor="let item of pkg.included.features">{{ item }}</li>
+              </ul>
+            </div>
+
+            <!-- Paid Plan -->
+            <div *ngIf="pkg.paidPlan" class="faxing-section">
+              <h4>{{ pkg.paidPlan.title }}</h4>
+              <p>
+                {{ pkg.paidPlan.description }}
+              </p>
+
+              <div *ngIf="pkg.paidPlan.table" class="responsive-table-wrapper">
+                <table>
+                  <thead>
+                    <tr>
+                      <th *ngFor="let head of pkg.paidPlan.table.headers">{{ head }}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let row of pkg.paidPlan.table.rows">
+                      <td *ngFor="let col of row">{{ col }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p *ngIf="pkg.paidPlan.note" class="note">
+                {{ pkg.paidPlan.note }}
+              </p>
+
+              <p *ngIf="pkg.paidPlan.contact" class="contact-sales">
+                {{ pkg.paidPlan.contact.split('Contact Sales')[0] }}
+                <a href="#" class="contact-link">Contact Sales</a>
+                {{ pkg.paidPlan.contact.split('Contact Sales')[1] }}
+              </p>
+            </div>
+
+            <!-- Pricing Section -->
+            <div *ngIf="pkg.pricing" class="faxing-section">
+              <h4>{{ pkg.pricing.title }}</h4>
+
+              <div *ngIf="pkg.pricing.table" class="responsive-table-wrapper">
+                <table>
+                  <thead>
+                    <tr>
+                      <th *ngFor="let head of pkg.pricing.table.headers">{{ head }}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let row of pkg.pricing.table.rows">
+                      <td *ngFor="let col of row">{{ col }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p *ngIf="pkg.pricing.note" class="note">{{ pkg.pricing.note }}</p>
+
+              <p *ngIf="pkg.pricing.contact" class="contact-sales">
+                {{ pkg.pricing.contact.split('Contact Sales')[0] }}
+                <a href="#" class="contact-link">Contact Sales</a>
+                {{ pkg.pricing.contact.split('Contact Sales')[1] }}
+              </p>
+            </div>
+
+            <!-- Custom Plan -->
+            <div *ngIf="pkg.customPlan" class="included-features">
+              <h4>{{ pkg.customPlan.title }}</h4>
+              <ul>
+                <li *ngFor="let item of pkg.customPlan.features">{{ item }}</li>
+              </ul>
+
+              <p *ngIf="pkg.customPlan.contact" class="contact-sales">
+                {{ pkg.customPlan.contact.split('Contact Sales')[0] }}
+                <a href="#" class="contact-link">Contact Sales</a>
+                {{ pkg.customPlan.contact.split('Contact Sales')[1] }}
+              </p>
+            </div>
+
+            <!-- Description only (eCommerce etc.) -->
+            <div *ngIf="pkg.description && !pkg.freePlan && !pkg.paidPlan && !pkg.pricing && !pkg.customPlan"
+              class="description-only">
+              <p>{{ pkg.description }}</p>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-free-trial />
+
+<app-footer />
+
+<app-back-to-top />

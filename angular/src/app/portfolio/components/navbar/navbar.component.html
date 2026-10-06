@@ -1,0 +1,58 @@
+<header
+  class="navbar"
+  [class.scrolled]="isScrolled()"
+  [class.menu-open]="menuOpen()"
+  role="banner"
+>
+  <div class="navbar-shell container">
+    <div class="navbar-inner">
+      <a href="#" class="logo" (click)="scrollTo('#hero'); $event.preventDefault()" aria-label="Ankit Singh — Home">
+        <span class="logo-mark">AS</span>
+        <span class="logo-text">Ankit Singh</span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Main navigation">
+        @for (link of navLinks; track link.href) {
+          <a
+            class="nav-link"
+            [href]="link.href"
+            (click)="scrollTo(link.href); $event.preventDefault()"
+          >{{ link.label }}</a>
+        }
+      </nav>
+
+      <div class="nav-actions">
+        <a
+          class="btn btn-primary nav-cta"
+          href="#contact"
+          (click)="scrollTo('#contact'); $event.preventDefault()"
+        >Let's Talk</a>
+
+        <button
+          class="menu-toggle"
+          (click)="toggleMenu()"
+          [attr.aria-expanded]="menuOpen()"
+          aria-label="Toggle navigation menu"
+        >
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <nav class="nav-mobile" [class.open]="menuOpen()" aria-label="Mobile navigation">
+    @for (link of navLinks; track link.href) {
+      <a
+        class="nav-mobile-link"
+        [href]="link.href"
+        (click)="scrollTo(link.href); $event.preventDefault()"
+      >{{ link.label }}</a>
+    }
+    <a
+      class="btn btn-primary nav-mobile-cta"
+      href="#contact"
+      (click)="scrollTo('#contact'); $event.preventDefault()"
+    >Let's Talk</a>
+  </nav>
+</header>

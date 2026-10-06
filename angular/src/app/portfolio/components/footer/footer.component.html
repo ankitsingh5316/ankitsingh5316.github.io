@@ -1,0 +1,32 @@
+<footer class="footer" role="contentinfo">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="#" class="footer-logo" (click)="scrollTo('#hero'); $event.preventDefault()">
+        <span class="footer-mark">AS</span>
+        <div>
+          <span class="footer-name">Ankit Singh</span>
+          <span class="footer-role">Front-End Developer</span>
+        </div>
+      </a>
+    </div>
+
+    <nav class="footer-nav" aria-label="Footer navigation">
+      @for (link of navLinks; track link.href) {
+        <a
+          [href]="link.href"
+          (click)="scrollTo(link.href); $event.preventDefault()"
+        >{{ link.label }}</a>
+      }
+    </nav>
+
+    <div class="footer-contact">
+      <a [href]="'tel:' + contact.phoneTel">{{ contact.phone }}</a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a [href]="'mailto:' + contact.email">{{ contact.email }}</a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <span>{{ contact.address }}</span>
+    </div>
+
+    <p class="footer-copy">&copy; {{ year }} Ankit Singh. All rights reserved.</p>
+  </div>
+</footer>

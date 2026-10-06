@@ -1,0 +1,32 @@
+<div class="feedback-area pt-100 pb-70">
+  <div class="container">
+    <div class="section-title">
+      <h2>{{ aboutData?.feedbackSection?.heading }}</h2>
+    </div>
+
+    <div class="feedback-slides">
+      <owl-carousel-o [options]="feedbackSlides">
+        <ng-container *ngFor="let item of aboutData?.feedbackSection?.items">
+          <ng-template carouselSlide>
+            <div class="single-feedback-item">
+              <img [src]="item.image" alt="client image" />
+              <div class="feedback-desc">
+                <p>{{ item.feedback }}</p>
+                <div class="rating">
+                  <i
+                    *ngFor="let star of [].constructor(item.rating)"
+                    class="bx bxs-star"
+                  ></i>
+                </div>
+                <div class="client-info">
+                  <h3>{{ item.name }}</h3>
+                  <span>{{ item.position }}</span>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+    </div>
+  </div>
+</div>

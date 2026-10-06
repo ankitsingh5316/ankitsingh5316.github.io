@@ -1,0 +1,116 @@
+.footer {
+  padding: 40px 0 32px;
+  border-top: 1px solid var(--border);
+  background: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    text-align: left;
+  }
+}
+
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: opacity var(--transition);
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+.footer-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--bg-elevated);
+}
+
+.footer-name {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.footer-role {
+  display: block;
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: left;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+
+  @media (min-width: 768px) {
+    justify-content: center;
+  }
+
+  a {
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    border-radius: var(--radius-sm);
+    transition: color var(--transition), background var(--transition);
+
+    &:hover {
+      color: var(--text-primary);
+      background: rgba(255, 255, 255, 0.04);
+    }
+  }
+}
+
+.footer-contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-secondary);
+
+  a {
+    color: var(--text-secondary);
+    transition: color var(--transition);
+
+    &:hover {
+      color: var(--accent-light);
+    }
+  }
+}
+
+.footer-sep {
+  color: var(--text-muted);
+}
+
+.footer-copy {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: center;
+  grid-column: 1 / -1;
+
+  @media (min-width: 768px) {
+    text-align: center;
+  }
+}

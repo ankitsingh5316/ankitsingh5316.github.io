@@ -1,0 +1,118 @@
+.performance-wrap {
+  padding: clamp(32px, 5vw, 48px);
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.performance-header {
+  margin-bottom: 40px;
+  max-width: 520px;
+}
+
+.performance-title {
+  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 32px;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+}
+
+.metric-card {
+  padding: 24px 16px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  text-align: center;
+  transition: border-color var(--transition), background var(--transition);
+
+  &:hover {
+    border-color: var(--border-hover);
+    background: rgba(255, 255, 255, 0.04);
+  }
+}
+
+.metric-ring-wrap {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 14px;
+}
+
+.metric-ring-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.metric-ring-progress {
+  stroke-dashoffset: 180;
+  transition: stroke-dashoffset 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.animated {
+    stroke-dashoffset: 34;
+  }
+}
+
+.metric-ring-value {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-light);
+}
+
+.metric-name {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.metric-desc {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.features-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+.feature-chip {
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  transition: border-color var(--transition), color var(--transition);
+
+  &:hover {
+    border-color: rgba(99, 102, 241, 0.3);
+    color: var(--text-primary);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .metric-ring-progress {
+    stroke-dashoffset: 34;
+    transition: none;
+  }
+}

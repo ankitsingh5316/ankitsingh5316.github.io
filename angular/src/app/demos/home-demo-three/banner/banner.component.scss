@@ -1,0 +1,371 @@
+.banner-section {
+    position: relative;
+    z-index: 1;
+
+    .container-fluid {
+        padding: {
+            left: 0;
+            right: 0;
+        };
+        .row {
+            margin: {
+                left: 0;
+                right: 0;
+            };
+            .col-lg-7, .col-lg-5 {
+                padding: {
+                    left: 0;
+                    right: 0;
+                };
+            }
+        }
+    }
+}
+.banner-content {
+    padding: {
+        top: 215px;
+        bottom: 125px;
+    };
+    .content {
+        max-width: 755px;
+        margin-left: auto;
+        padding-right: 220px;
+        
+        h1 {
+            font: {
+                size: 57px;
+                weight: 600;
+            };
+            span {
+                display: inline-block;
+                color: var(--optional-color);
+            }
+        }
+        p {
+            margin-top: 18px;
+            max-width: 540px;
+        }
+        .default-btn {
+            margin-top: 15px;
+            background-color: var(--black-color);
+
+            i {
+                color: var(--optional-color);
+            }
+        }
+    }
+}
+.banner-img {
+    height: 100vh;
+    position: relative;
+    border-radius: 0 0 0 80px;
+    background: {
+        color: var(--optional-color);
+        position: center center;
+        repeat: no-repeat;
+        size: cover;
+    };
+    img {
+        display: none;
+    }
+    .video-btn {
+        position: absolute;
+        left: 0;
+        right: 0;
+        display: inline-block;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 80px;
+        height: 80px;
+        background-color: var(--main-color);
+        border-radius: 5px;
+        color: var(--white-color);
+        font-size: 60px;
+        padding: 0;
+        border-width: 0;
+        transition: var(--transition);
+        z-index: 1;
+        margin: {
+            left: auto;
+            right: auto;
+        };
+        &::after, &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: -1;
+            bottom: 0;
+            left: 0;
+            border-radius: 5px;
+            border: 1px solid var(--main-color);
+            transition: var(--transition);
+        }
+        i {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            z-index: 1;
+            transform: translateY(-50%);
+            margin: {
+                left: auto;
+                right: auto;
+            };
+        }
+        &::before {
+            animation: ripple 2s linear infinite
+        }
+        &::after {
+            animation: ripple 2s linear 1s infinite
+        }
+        &:hover {
+            background-color: var(--optional-color);
+            color: var(--white-color);
+
+            &::after, &::before {
+                border-color: var(--optional-color);
+            }
+        }
+    }
+}
+::ng-deep {
+    .banner-content-slides {
+        .owl-theme {
+            .owl-nav {
+                text-align: start;
+                margin-top: 50px;
+    
+                [class*=owl-] {
+                    padding: 0;
+                    width: 45px;
+                    height: 45px;
+                    margin: 0 5px;
+                    font-size: 25px;
+                    border-radius: 0;
+                    line-height: 51px;
+                    text-align: center;
+                    background: #f4f6fc;
+                    color: var(--black-color);
+                    transition: var(--transition);
+    
+                    &:hover {
+                        color: var(--white-color);
+                        background-color: var(--main-color);
+                    }
+                    &.owl-prev {
+                        border-radius: 0 0 0 10px;
+                        margin-left: 0;
+                    }
+                    &.owl-next {
+                        margin-right: 0;
+                        border-radius: 0 10px 0 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .banner-section {
+        .container-fluid {
+            padding: {
+                left: calc(var(--bs-gutter-x) * 0.5);
+                right: calc(var(--bs-gutter-x) * 0.5);
+            };
+        }
+    }
+    .banner-content {
+        padding: {
+            top: 60px;
+            bottom: 0;
+        };
+        .content {
+            max-width: 100%;
+            padding-right: 0;
+            text-align: center;
+            margin: {
+                left: 0;
+            };
+            h1 {
+                font-size: 30px;
+            }
+            p {
+                margin-top: 15px;
+                max-width: 100%;
+            }
+            .default-btn {
+                margin-top: 10px;
+            }
+        }
+    }
+    .banner-img {
+        height: auto;
+        border-radius: 0;
+        margin-top: 60px;
+        background-image: unset !important;
+
+        img {
+            display: inline-block;
+        }
+    }
+    ::ng-deep {
+        .banner-content-slides {
+            .owl-theme {
+                .owl-nav {
+                    text-align: center;
+                    margin-top: 35px;
+    
+                    [class*=owl-] {
+                        font-size: 20px;
+                        margin: 0 4px;
+                        width: 35px;
+                        height: 35px;
+                        line-height: 40px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+
+    .banner-section {
+        .container-fluid {
+            max-width: 540px;
+        }
+    }
+    .banner-content {
+        .content {
+            max-width: 540px;
+            margin: {
+                left: auto;
+                right: auto;
+            };
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .banner-content {
+        padding: {
+            top: 80px;
+            bottom: 0;
+        };
+        .content {
+            max-width: 620px;
+            text-align: center;
+            padding-right: 0;
+            margin: {
+                left: auto;
+                right: auto;
+            };
+            h1 {
+                font-size: 40px;
+                font-weight: 500;
+            }
+            p {
+                margin-top: 15px;
+                max-width: 100%;
+            }
+            .default-btn {
+                margin-top: 10px;
+            }
+        }
+    }
+    .banner-img {
+        height: auto;
+        margin-top: 60px;
+        border-radius: 0;
+        background-image: unset !important;
+
+        img {
+            display: inline-block;
+            width: 100%;
+        }
+    }
+    ::ng-deep {
+        .banner-content-slides {
+            .owl-theme {
+                .owl-nav {
+                    text-align: center;
+                    margin-top: 35px;
+    
+                    [class*=owl-] {
+                        font-size: 22px;
+                        width: 40px;
+                        height: 40px;
+                        line-height: 45px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .banner-content {
+        padding: {
+            top: 145px;
+            bottom: 130px;
+        };
+        .content {
+            max-width: 550px;
+            padding-right: 50px;
+
+            h1 {
+                font-size: 48px;
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .banner-content {
+        .content {
+            max-width: 655px;
+            padding-right: 150px;
+
+            h1 {
+                font-size: 50px;
+            }
+        }
+    }
+
+}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {
+
+    .banner-section {
+        .container-fluid {
+            max-width: 1920px;
+        }
+    }
+    .banner-content {
+        padding: {
+            top: 290px;
+            bottom: 200px;
+        };
+        .content {
+            max-width: 805px;
+        }
+    }
+
+}

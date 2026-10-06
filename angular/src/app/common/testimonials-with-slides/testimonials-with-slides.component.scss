@@ -1,0 +1,70 @@
+@use "../testimonials/testimonials.component.scss" as *;
+
+::ng-deep {
+    .testimonials-slides {
+        .owl-theme {
+            .owl-nav {
+                &.disabled+.owl-dots {
+                    line-height: initial;
+                    margin: {
+                        bottom: 30px;
+                        top: 10px;
+                    };
+                }
+            }
+            .owl-dots {
+                .owl-dot {
+                    span {
+                        width: 14px;
+                        height: 14px;
+                        margin: 0 3px;
+                        background: transparent;
+                        transition: var(--transition);
+                        border-radius: 50%;
+                        border: 1px solid var(--white-color);
+                        position: relative;
+    
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            right: 0;
+                            bottom: 0;
+                            border-radius: 50%;
+                            margin: 2px;
+                            background-color: var(--white-color);
+                            transform: scale(0);
+                            transition: var(--transition);
+                        }
+                    }
+                    &.active, &:hover {
+                        span {
+                            &::before {
+                                transform: scale(1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

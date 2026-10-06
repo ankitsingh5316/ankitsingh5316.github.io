@@ -1,0 +1,87 @@
+<!-- <div class="subscribe-area bg-f4f5fe">
+    <div class="container">
+        <div class="subscribe-content">
+            <h2>We always try to be as close to you as possible</h2>
+            <form class="newsletter-form">
+                <div class="row align-items-center">
+                    <div class="col-lg-8 col-md-8">
+                        <input type="email" class="input-newsletter" placeholder="hello&#64;jexsa.com" name="email">
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <button type="submit"><i class="bx bxs-hot"></i> Subscribe Now</button>
+                    </div>
+                </div>
+            </form>
+            <div class="shape14"><img src="img/shape/shape13.png" alt="image"></div>
+            <div class="shape15"><img src="img/shape/shape14.png" alt="image"></div>
+            <div class="shape16"><img src="img/shape/shape15.png" alt="image"></div>
+            <div class="shape17"><img src="img/shape/shape16.png" alt="image"></div>
+            <div class="shape18"><img src="img/shape/shape17.png" alt="image"></div>
+        </div>
+    </div>
+</div> -->
+
+
+<div class="subscribe-content border-radius-0">
+  <h2>Quick Inquiry Form</h2>
+
+  <form [formGroup]="inquiryForm" (ngSubmit)="onSubmit()" class="newsletter-form inquiry-form">
+    <div class="row">
+      <!-- Name -->
+      <div class="col-lg-6 col-md-6 mb-3">
+        <input type="text" class="input-newsletter" placeholder="Name (Required)" formControlName="name">
+        <div *ngIf="inquiryForm.get('name')?.invalid && inquiryForm.get('name')?.touched" class="text-danger mt-1">
+          <small>Name is required</small>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="col-lg-6 col-md-6 mb-3">
+        <input type="email" class="input-newsletter" placeholder="Email (Required)" formControlName="email">
+        <div *ngIf="inquiryForm.get('email')?.invalid && inquiryForm.get('email')?.touched" class="text-danger mt-1">
+          <small *ngIf="inquiryForm.get('email')?.errors?.['required']">Email is required</small>
+          <small *ngIf="inquiryForm.get('email')?.errors?.['email']">Please enter a valid email</small>
+        </div>
+      </div>
+
+      <!-- Phone -->
+      <div class="col-lg-6 col-md-6 mb-3">
+        <input type="tel" class="input-newsletter" placeholder="Phone Number" formControlName="phone">
+      </div>
+
+      <!-- Service Interested In -->
+      <div class="col-lg-6 col-md-6 mb-3">
+        <select class="input-newsletter" formControlName="service">
+          <option value="" disabled selected>Service Interested In</option>
+          <option value="voice">Voice Broadcasting</option>
+          <option value="email">Email Broadcasting</option>
+          <option value="sms">SMS Services</option>
+          <option value="website">Website Development</option>
+          <option value="social">Social Media Marketing</option>
+          <option value="ip-pbx">Business IP PBX</option>
+          <option value="fax">Fax Services</option>
+          <option value="project">Project Management</option>
+        </select>
+      </div>
+
+      <!-- Message -->
+      <div class="col-lg-12 col-md-12 mb-3">
+        <textarea class="input-newsletter" formControlName="message" rows="5" placeholder="Message"></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="col-lg-12 col-md-12 text-center">
+        <button type="submit" class="btn btn-primary">
+          <i class="bx bxs-hot"></i> Send Inquiry
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <!-- Shapes same as original -->
+  <div class="shape14"><img src="img/shape/shape13.png" alt="image"></div>
+  <div class="shape15"><img src="img/shape/shape14.png" alt="image"></div>
+  <div class="shape16"><img src="img/shape/shape15.png" alt="image"></div>
+  <div class="shape17"><img src="img/shape/shape16.png" alt="image"></div>
+  <div class="shape18"><img src="img/shape/shape17.png" alt="image"></div>
+</div>

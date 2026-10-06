@@ -1,0 +1,25 @@
+<section id="process" class="process section section--alt" aria-labelledby="process-heading">
+  <div class="container">
+    <div class="section-header section-header--center" appScrollReveal="fade-up">
+      <span class="section-label">Approach</span>
+      <h2 id="process-heading" class="section-title">Engineering process.</h2>
+      <p class="section-subtitle">
+        A structured approach from requirements to production validation.
+      </p>
+    </div>
+
+    <div class="process-track">
+      @for (step of steps; track step.number; let i = $index) {
+        <article
+          class="process-step card"
+          appScrollReveal="fade-up"
+          [revealDelay]="i * 80"
+        >
+          <span class="step-number">{{ step.number }}</span>
+          <h3 class="step-title">{{ step.title }}</h3>
+          <p class="step-desc">{{ step.description }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>

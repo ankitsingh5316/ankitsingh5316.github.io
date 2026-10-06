@@ -1,0 +1,249 @@
+<app-navbar-one />
+
+<app-page-banner
+    [pageTitle]="'Blog'"
+    [pageSubTitle]="'News and Insights'"
+/>
+
+<!-- Blog Grid -->
+<div class="blog-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <!-- <div class="col-lg-4 col-md-6">
+                <div class="single-blog-post">
+                    <div class="post-image">
+                        <a routerLink="/blog-details"><img src="img/blog-image/img1.jpg" alt="image"></a>
+                        <div class="date"><i class='bx bx-calendar'></i> Oct 14, 2025</div>
+                    </div>
+                    <div class="post-content">
+                        <h3><a routerLink="/blog-details">50 world-changing people -- We lost in the 2010s</a></h3>
+                        <div class="post-info">
+                            <div class="post-by">
+                                <img src="img/author-image/img1.jpg" alt="image">
+                                <h6>Sarah Taylor</h6>
+                            </div>
+                            <div class="details-btn">
+                                <a routerLink="/blog-details"><i class="bx bx-right-arrow-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="col-lg-4 col-md-6" *ngFor="let blog of blogs">
+                <div class="single-blog-post">
+                    <div class="post-image">
+                        <a [routerLink]="['/blogs', blog.slug]">
+                            <img [src]="blog.image" [alt]="blog.title" />
+                        </a>
+                        <div class="date">
+                            <i class="bx bx-calendar"></i>
+                            {{ blog.date | date : "MMM d, y" }}
+                        </div>
+                    </div>
+
+                    <div class="post-content">
+                        <h3>
+                            <a [routerLink]="['/blogs', blog.slug]">
+                                {{ blog.title }}
+                            </a>
+                        </h3>
+                        <div class="post-info">
+                            <div class="post-by">
+                                <img
+                                    [src]="blog.authorImage"
+                                    [alt]="blog.author"
+                                />
+                                <h6>{{ blog.author }}</h6>
+                            </div>
+                            <div class="details-btn">
+                                <a [routerLink]="['/blogs', blog.slug]">
+                                    <i class="bx bx-right-arrow-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="col-lg-4 col-md-6">
+                <div class="single-blog-post">
+                    <div class="post-image">
+                        <a routerLink="/blog-details"><img src="img/blog-image/img2.jpg" alt="image"></a>
+                        <div class="date"><i class='bx bx-calendar'></i> Oct 16, 2025</div>
+                    </div>
+                    <div class="post-content">
+                        <h3><a routerLink="/blog-details">Don't buy a tech gift until you read these rules</a></h3>
+                        <div class="post-info">
+                            <div class="post-by">
+                                <img src="img/author-image/img2.jpg" alt="image">
+                                <h6>Michel John</h6>
+                            </div>
+                            <div class="details-btn">
+                                <a routerLink="/blog-details"><i class="bx bx-right-arrow-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-blog-post">
+                    <div class="post-image">
+                        <a routerLink="/blog-details"><img src="img/blog-image/img3.jpg" alt="image"></a>
+                        <div class="date"><i class='bx bx-calendar'></i> Oct 18, 2025</div>
+                    </div>
+                    <div class="post-content">
+                        <h3><a routerLink="/blog-details">The golden rule of buying a phone as a gift</a></h3>
+                        <div class="post-info">
+                            <div class="post-by">
+                                <img src="img/author-image/img3.jpg" alt="image">
+                                <h6>Lucy Eva</h6>
+                            </div>
+                            <div class="details-btn">
+                                <a routerLink="/blog-details"><i class="bx bx-right-arrow-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-blog-post">
+                    <div class="post-image">
+                        <a routerLink="/blog-details"><img src="img/blog-image/img4.jpg" alt="image"></a>
+                        <div class="date"><i class='bx bx-calendar'></i> Oct 14, 2025</div>
+                    </div>
+                    <div class="post-content">
+                        <h3><a routerLink="/blog-details">Configure Redux Into Your WordPress Theme</a></h3>
+                        <div class="post-info">
+                            <div class="post-by">
+                                <img src="img/author-image/img2.jpg" alt="image">
+                                <h6>Sarah Taylor</h6>
+                            </div>
+                            <div class="details-btn">
+                                <a routerLink="/blog-details"><i class="bx bx-right-arrow-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-blog-post">
+                    <div class="post-image">
+                        <a routerLink="/blog-details"><img src="img/blog-image/img5.jpg" alt="image"></a>
+                        <div class="date"><i class='bx bx-calendar'></i> Oct 16, 2025</div>
+                    </div>
+                    <div class="post-content">
+                        <h3><a routerLink="/blog-details">How To Setup Redux In React Next Application</a></h3>
+                        <div class="post-info">
+                            <div class="post-by">
+                                <img src="img/author-image/img3.jpg" alt="image">
+                                <h6>Michel John</h6>
+                            </div>
+                            <div class="details-btn">
+                                <a routerLink="/blog-details"><i class="bx bx-right-arrow-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-blog-post">
+                    <div class="post-image">
+                        <a routerLink="/blog-details"><img src="img/blog-image/img6.jpg" alt="image"></a>
+                        <div class="date"><i class='bx bx-calendar'></i> Oct 18, 2025</div>
+                    </div>
+                    <div class="post-content">
+                        <h3><a routerLink="/blog-details">How To Resubmit Rejected Item Into ThemeForest?</a></h3>
+                        <div class="post-info">
+                            <div class="post-by">
+                                <img src="img/author-image/img1.jpg" alt="image">
+                                <h6>Lucy Eva</h6>
+                            </div>
+                            <div class="details-btn">
+                                <a routerLink="/blog-details"><i class="bx bx-right-arrow-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-blog-post">
+                    <div class="post-image">
+                        <a routerLink="/blog-details"><img src="img/blog-image/img7.jpg" alt="image"></a>
+                        <div class="date"><i class='bx bx-calendar'></i> Oct 14, 2025</div>
+                    </div>
+                    <div class="post-content">
+                        <h3><a routerLink="/blog-details">How To The Active Menu Based On URL In Next.JS?</a></h3>
+                        <div class="post-info">
+                            <div class="post-by">
+                                <img src="img/author-image/img3.jpg" alt="image">
+                                <h6>Sarah Taylor</h6>
+                            </div>
+                            <div class="details-btn">
+                                <a routerLink="/blog-details"><i class="bx bx-right-arrow-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-blog-post">
+                    <div class="post-image">
+                        <a routerLink="/blog-details"><img src="img/blog-image/img8.jpg" alt="image"></a>
+                        <div class="date"><i class='bx bx-calendar'></i> Oct 16, 2025</div>
+                    </div>
+                    <div class="post-content">
+                        <h3><a routerLink="/blog-details">How To Create A Responsive Popup Gallery?</a></h3>
+                        <div class="post-info">
+                            <div class="post-by">
+                                <img src="img/author-image/img2.jpg" alt="image">
+                                <h6>Michel John</h6>
+                            </div>
+                            <div class="details-btn">
+                                <a routerLink="/blog-details"><i class="bx bx-right-arrow-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-blog-post">
+                    <div class="post-image">
+                        <a routerLink="/blog-details"><img src="img/blog-image/img9.jpg" alt="image"></a>
+                        <div class="date"><i class='bx bx-calendar'></i> Oct 18, 2025</div>
+                    </div>
+                    <div class="post-content">
+                        <h3><a routerLink="/blog-details">WP Custom Post Register & Query</a></h3>
+                        <div class="post-info">
+                            <div class="post-by">
+                                <img src="img/author-image/img1.jpg" alt="image">
+                                <h6>Lucy Eva</h6>
+                            </div>
+                            <div class="details-btn">
+                                <a routerLink="/blog-details"><i class="bx bx-right-arrow-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12">
+                <div class="pagination-area">
+                    <a routerLink="." class="prev page-numbers"><i class='bx bxs-arrow-to-left'></i></a>
+                    <a routerLink="." class="page-numbers">1</a>
+                    <span class="page-numbers current" aria-current="page">2</span>
+                    <a routerLink="." class="page-numbers">3</a>
+                    <a routerLink="." class="page-numbers">4</a>
+                    <a routerLink="." class="next page-numbers"><i class='bx bxs-arrow-to-right'></i></a>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>
+
+<div class="bg-f4f5fe pb-100"></div>
+
+<app-free-trial />
+
+<app-footer />
+
+<app-back-to-top />

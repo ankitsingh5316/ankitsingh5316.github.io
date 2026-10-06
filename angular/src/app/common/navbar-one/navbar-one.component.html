@@ -1,0 +1,66 @@
+<div class="navbar-area" [ngClass]="{'is-sticky': isSticky, 'style-two': router.url === '/index-4'}">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg" [class.active-collapse]="navbarToggleClassApplied">
+            <a class="navbar-brand" routerLink="/">
+                <img src="img/logo.svg" alt="logo" style="width: 50px;">
+            </a>
+            <button class="navbar-toggler shadow-none rounded-0" (click)="navbarToggleClass()" type="button">
+                <span class="burger-menu">
+                    <span class="top-bar"></span>
+                    <span class="middle-bar"></span>
+                    <span class="bottom-bar"></span>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" [class.show]="navbarToggleClassApplied">
+                <ul class="navbar-nav m-auto">
+                    <ng-container *ngIf="navigationData?.mainMenu">
+                        <li class="nav-item" *ngFor="let item of navigationData?.mainMenu">
+                            <!-- Regular menu item -->
+                            <ng-container *ngIf="!item.hasDropdown">
+                                <a [routerLink]="item.link" 
+                                   class="nav-link" 
+                                   routerLinkActive="active" 
+                                   [routerLinkActiveOptions]="{exact: true}">
+                                    {{item.title}}
+                                </a>
+                            </ng-container>
+
+                            <!-- Dropdown menu item -->
+                            <ng-container *ngIf="item.hasDropdown">
+                                <a class="nav-link dropdown-toggle" 
+                                   href="javascript:void(0)" 
+                                   [id]="'dropdown-' + item.id">
+                                    {{item.title}}
+                                    <i class='bx bx-chevron-down'></i>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item" *ngFor="let dropdownItem of item.dropdownItems">
+                                        <a class="nav-link" 
+                                           [routerLink]="dropdownItem.link"
+                                           routerLinkActive="active">
+                                            {{dropdownItem.title}}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </ng-container>
+                        </li>
+                    </ng-container>
+                </ul>
+
+                <!-- Action Buttons -->
+                <div class="others-options" [ngClass]="{'style-two': router.url === '/' || router.url === '/index-2' || router.url === '/index-3' || router.url === '/index-5' || router.url === '/index-6' || router.url === '/index-7'}">
+                    <a routerLink="/contact" class="default-btn">
+                        <i class="bx bxs-hot"></i>
+                        Get Started
+                        <span></span>
+                    </a>
+                    <a routerLink="/signin" class="optional-btn">
+                        <i class="bx bx-log-in"></i>
+                        Signin
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>

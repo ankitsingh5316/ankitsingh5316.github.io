@@ -1,0 +1,58 @@
+{
+  "common": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "services": "Servicios",
+    "contact": "Contacto",
+    "blog": "Blog",
+    "signIn": "Iniciar Sesión",
+    "signUp": "Registrarse",
+    "search": "Buscar",
+    "readMore": "Leer más",
+    "getStarted": "Comenzar",
+    "learnMore": "Saber más",
+    "ourServices": "Nuestros Servicios",
+    "testimonials": "Testimonios",
+    "faq": "Preguntas Frecuentes",
+    "pricing": "Precios",
+    "team": "Equipo",
+    "privacyPolicy": "Política de Privacidad",
+    "termsConditions": "Términos y Condiciones"
+  },
+  "home": {
+    "hero": {
+      "title": "Impulse la Productividad de su Centro de Llamadas con RingPilot",
+      "subtitle": "Maximice el compromiso del cliente y aumente las ventas con nuestro software de marcador definitivo, diseñado para la eficiencia y el rendimiento superior en cada llamada.",
+      "cta": "Comenzar"
+    },
+    "features": {
+      "title": "Características Principales",
+      "subtitle": "Descubra cómo RingPilot puede transformar su centro de llamadas"
+    },
+    "testimonials": {
+      "title": "Lo que dicen nuestros clientes",
+      "subtitle": "Descubra cómo RingPilot ha ayudado a empresas como la suya"
+    },
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "subtitle": "Encuentre respuestas a las preguntas más comunes sobre RingPilot"
+    }
+  },
+  "contact": {
+    "title": "Contáctenos",
+    "subtitle": "Estamos aquí para ayudar. Envíenos un mensaje y nos pondremos en contacto con usted lo antes posible.",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "phone": "Teléfono",
+      "message": "Mensaje",
+      "submit": "Enviar mensaje"
+    },
+    "info": {
+      "address": "Dirección",
+      "email": "Correo electrónico",
+      "phone": "Teléfono",
+      "hours": "Horario de atención"
+    }
+  }
+} 

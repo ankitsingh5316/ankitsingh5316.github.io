@@ -1,0 +1,58 @@
+{
+  "common": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact",
+    "blog": "Blog",
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "search": "Search",
+    "readMore": "Read More",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More",
+    "ourServices": "Our Services",
+    "testimonials": "Testimonials",
+    "faq": "FAQ",
+    "pricing": "Pricing",
+    "team": "Team",
+    "privacyPolicy": "Privacy Policy",
+    "termsConditions": "Terms & Conditions"
+  },
+  "home": {
+    "hero": {
+      "title": "Boost Your Call Center Productivity with RingPilot",
+      "subtitle": "Maximize customer engagement and boost sales with our ultimate dialer software, designed for efficiency and superior performance in every call.",
+      "cta": "Get Started"
+    },
+    "features": {
+      "title": "Key Features",
+      "subtitle": "Discover how RingPilot can transform your call center"
+    },
+    "testimonials": {
+      "title": "What Our Clients Say",
+      "subtitle": "See how RingPilot has helped businesses like yours"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Find answers to the most common questions about RingPilot"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We're here to help. Send us a message and we'll get back to you as soon as possible.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message",
+      "submit": "Send Message"
+    },
+    "info": {
+      "address": "Address",
+      "email": "Email",
+      "phone": "Phone",
+      "hours": "Business Hours"
+    }
+  }
+} 

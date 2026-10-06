@@ -1,0 +1,67 @@
+.go-top {
+	position: fixed;
+	cursor: pointer;
+    bottom: 15px;
+	right: 15px;
+	color: var(--black-color);
+	background-color: var(--white-color);
+	z-index: 4;
+	width: 45px;
+	text-align: center;
+	height: 45px;
+    border-radius: 50%;
+    font-size: 40px;
+    transition: .9s;
+    overflow: hidden;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+    
+    i {
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 70%;
+        transform: translateY(-70%);
+        text-align: center;
+        margin: {
+            left: auto;
+            right: auto;
+        };
+    }
+    &:hover {
+        background-color: var(--optional-color);
+        color: var(--white-color);
+        transition: var(--transition);
+        transform: translateY(-10px);
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .go-top {
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        font-size: 36px;
+
+        &.active {
+            bottom: 10px;
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

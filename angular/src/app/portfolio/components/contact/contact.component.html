@@ -1,0 +1,117 @@
+<section id="contact" class="contact section" aria-labelledby="contact-heading">
+  <div class="container">
+    <div class="contact-card card" appScrollReveal="fade-up">
+      <div class="contact-glow contact-glow--primary" aria-hidden="true"></div>
+      <div class="contact-glow contact-glow--secondary" aria-hidden="true"></div>
+      <div class="contact-grid-pattern" aria-hidden="true"></div>
+
+      <div class="contact-grid">
+        <div class="contact-content">
+          <span class="section-label">Contact</span>
+          <p class="contact-availability">
+            <span class="contact-availability-dot" aria-hidden="true"></span>
+            Open to full-time & freelance
+          </p>
+          <h2 id="contact-heading" class="contact-title">{{ contact.headline }}</h2>
+          <p class="contact-subtext">{{ contact.subtext }}</p>
+
+          <div class="contact-actions">
+            <a class="btn btn-primary" [href]="'mailto:' + contact.email">
+              Email Me
+              <svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path
+                  d="M3 8h10M9 4l4 4-4 4"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+            <a class="btn btn-secondary" [href]="'tel:' + contact.phoneTel">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path
+                  d="M3.5 2h2.2l1.1 2.9-1.5.9a8 8 0 003.8 3.8l.9-1.5 2.9 1.1v2.2a1.3 1.3 0 01-1.3 1.3A10 10 0 012.2 3.5 1.3 1.3 0 013.5 2z"
+                  stroke="currentColor"
+                  stroke-width="1.2"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              Call Me
+            </a>
+          </div>
+        </div>
+
+        <aside class="contact-aside" aria-label="Contact details">
+          <h3 class="contact-aside-title">Reach me</h3>
+          <div class="contact-info">
+            <a class="contact-detail" [href]="'tel:' + contact.phoneTel">
+              <span class="contact-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                  <path
+                    d="M4 2h3l1.5 4-2 1.2a11 11 0 005.3 5.3L14 10.5 18 12v3a2 2 0 01-2 2A14 14 0 012 4a2 2 0 012-2z"
+                    stroke="currentColor"
+                    stroke-width="1.3"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <div class="contact-detail-body">
+                <span class="contact-label">Phone</span>
+                <span class="contact-value">{{ contact.phone }}</span>
+              </div>
+              <svg class="contact-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path
+                  d="M6 4l4 4-4 4"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+
+            <a class="contact-detail contact-detail--email" [href]="'mailto:' + contact.email">
+              <span class="contact-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                  <rect x="1" y="3" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.3" />
+                  <path d="M1 5l8 5 8-5" stroke="currentColor" stroke-width="1.3" />
+                </svg>
+              </span>
+              <div class="contact-detail-body">
+                <span class="contact-label">Email</span>
+                <span class="contact-value">{{ contact.email }}</span>
+              </div>
+              <svg class="contact-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path
+                  d="M6 4l4 4-4 4"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+
+            <div class="contact-detail contact-detail--static">
+              <span class="contact-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                  <path
+                    d="M9 16s6-4.5 6-9a6 6 0 10-12 0c0 4.5 6 9 6 9z"
+                    stroke="currentColor"
+                    stroke-width="1.3"
+                  />
+                  <circle cx="9" cy="7" r="2" stroke="currentColor" stroke-width="1.3" />
+                </svg>
+              </span>
+              <div class="contact-detail-body">
+                <span class="contact-label">Location</span>
+                <span class="contact-value">{{ contact.address }}</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>

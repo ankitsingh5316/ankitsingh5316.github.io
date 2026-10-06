@@ -1,0 +1,68 @@
+<app-navbar-one />
+
+<app-page-banner [pageTitle]="'About Us'" 
+[pageSubTitle]="'Smart Solutions for Global Success'" />
+
+<!-- About Us -->
+<div class="about-area ptb-100">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12">
+                <div class="about-content">
+                    <span class="sub-title">{{aboutData?.mainSection?.heading}}</span>
+                    <h2>{{aboutData?.mainSection?.subheading}}</h2>
+                    <p>{{aboutData?.mainSection?.description}}</p>
+                    <p>{{aboutData?.mainSection?.description2}}</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="about-image">
+                   <img [src]="aboutData?.mainSection?.mainImage" alt="{{ aboutData?.mainSection?.heading }}" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Our Story -->
+<div class="about-area ptb-100">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12">
+                <div class="about-image">
+                    <img [src]="aboutData?.ourStory?.mainImage" alt="{{ aboutData?.ourStory?.heading }}" />
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="about-content">
+                    <!-- <span class="sub-title">About Us – Bharat Global</span> -->
+                    <h2 class="sub-title">{{ aboutData?.ourStory?.heading }}</h2>
+                    <p>{{ aboutData?.ourStory?.subheading }}</p>
+                    <p>{{ aboutData?.ourStory?.description }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-clients />
+
+<div class="container">
+    <div class="border-top"></div>
+</div>
+
+<app-values />
+
+<app-mobile-app />
+
+<app-funfacts />
+
+<app-feedback />
+
+<div class="bg-f4f5fe pb-100"></div>
+
+<app-free-trial />
+
+<app-footer />
+
+<app-back-to-top />

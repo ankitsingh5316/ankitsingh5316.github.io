@@ -1,0 +1,24 @@
+<!-- Our Values -->
+<div class="features-area pt-100 pb-70">
+  <div class="container">
+    <div class="section-title text-center mb-5">
+      <h2>{{ aboutData?.ourValues?.heading }}</h2>
+      <p>{{ aboutData?.ourValues?.subheading }}</p>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4 col-sm-6" *ngFor="let item of aboutData?.ourValues?.values">
+        <div class="features-box">
+          <div class="icon">
+            <i [class]="item.icon"></i>
+          </div>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+          <div class="back-icon">
+            <i [class]="item.icon"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

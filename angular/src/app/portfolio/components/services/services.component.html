@@ -1,0 +1,55 @@
+<section id="services" class="services section section--alt" aria-labelledby="services-heading">
+  <div class="container">
+    <div class="section-header section-header--center" appScrollReveal="fade-up">
+      <span class="section-label">What I Build</span>
+      <h2 id="services-heading" class="section-title">From interface to production.</h2>
+      <p class="section-subtitle">
+        End-to-end frontend development — from component architecture to production deployment.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      @for (service of services; track service.number; let i = $index) {
+        <article
+          class="service-card card"
+          appScrollReveal="fade-up"
+          [revealDelay]="i * 80"
+        >
+          <div class="service-top">
+            <span class="service-number">{{ service.number }}</span>
+            <div class="service-icon">
+              @switch (service.icon) {
+                @case ('interface') {
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="2" y1="7" x2="18" y2="7" stroke="currentColor" stroke-width="1.5"/>
+                  </svg>
+                }
+                @case ('web') {
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
+                    <ellipse cx="10" cy="10" rx="4" ry="8" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="2" y1="10" x2="18" y2="10" stroke="currentColor" stroke-width="1.5"/>
+                  </svg>
+                }
+                @case ('dynamic') {
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M4 6h12M4 10h8M4 14h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <circle cx="16" cy="14" r="2" fill="currentColor"/>
+                  </svg>
+                }
+                @case ('performance') {
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M3 15L8 9l3 3 6-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                }
+              }
+            </div>
+          </div>
+          <h3 class="service-title">{{ service.title }}</h3>
+          <p class="service-desc">{{ service.description }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>

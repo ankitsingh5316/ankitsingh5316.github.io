@@ -1,0 +1,57 @@
+<footer class="footer-area">
+    <div class="divider"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-footer-widget">
+                    <div class="logo">
+                        <a routerLink="/">
+                            <img src="img/white-logo.png" alt="Company Logo" style="width: 50px;"> 
+                        </a>
+                    </div>
+                    <!-- <p>Get in touch today — let’s discuss how Bharat Global can support your growth.</p> -->
+                        <p>{{footerData?.companyInfo?.description}}</p>
+                    </div>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-6">
+                <div class="single-footer-widget">
+                    <h3>Company</h3>
+                    <ul class="services-list">
+                        <li *ngFor="let link of footerData?.quickLinks">
+                            <a href="{{link.link}}">{{link.title}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-6">
+                <div class="single-footer-widget">
+                    <h3>Support</h3>
+                    <ul class="support-list">
+                       <li *ngFor="let service of footerData?.services">
+                            <a href="{{service.link}}">{{service.title}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-footer-widget">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-contact-info">
+                        <li>Location: <a [href]="footerData?.companyInfo?.mapLink" target="_blank">{{footerData?.companyInfo?.address}}</a></li>
+                        <li>Email: <a [href]="'mailto:' + footerData?.companyInfo?.email">{{footerData?.companyInfo?.email}}</a></li>
+                        <li>Phone: <a [href]="'tel:' + footerData?.companyInfo?.phone">{{footerData?.companyInfo?.phone}}</a></li>
+                    </ul>
+                    <!-- <ul class="social">
+                        <li><a href="#" target="_blank"><i class="bx bxl-facebook"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="bx bxl-twitter"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="bx bxl-linkedin"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="bx bxl-instagram"></i></a></li>
+                    </ul> -->
+                </div>
+            </div>
+        </div>
+        <div class="copyright-area">
+            <p>© 2025 Designed & Developed by <a href="" target="_blank">Bharat Global</a></p>
+        </div>
+    </div>
+</footer>

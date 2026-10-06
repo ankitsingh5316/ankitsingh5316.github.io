@@ -1,0 +1,31 @@
+<section id="about" class="about section section--alt" aria-labelledby="about-heading">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-left" appScrollReveal="fade-right">
+        <span class="section-label">About</span>
+        <h2 id="about-heading" class="about-quote">
+          I care about the details users notice<br>
+          and the <span class="gradient-text">performance</span> they don't.
+        </h2>
+      </div>
+
+      <div class="about-details card" appScrollReveal="fade-left" [revealDelay]="120">
+        <p class="about-desc">
+          I'm a frontend developer focused on building responsive, maintainable and
+          production-ready web experiences. My work spans Angular, Next.js, SSR, SEO,
+          API integration, dynamic content and performance optimization.
+        </p>
+        <div class="about-facts">
+          @for (fact of facts; track fact) {
+            <div class="about-fact">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M2 7l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              {{ fact }}
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

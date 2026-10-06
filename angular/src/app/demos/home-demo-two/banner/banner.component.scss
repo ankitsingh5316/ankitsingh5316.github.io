@@ -1,0 +1,80 @@
+@use "../../home-demo-one/banner/banner.component.scss" as *;
+
+.banner-image2 {
+    height: 100vh;
+    border-radius: 0 0 0 80px;
+    background: {
+        size: cover;
+        repeat: no-repeat;
+        position: center center;
+        color: var(--optional-color);
+    };
+}
+::ng-deep {
+    .main-banner-two {
+        .banner-image-slider {
+            .owl-nav {
+                &.disabled + .owl-dots {
+                    margin-top: 0;
+                }
+            }
+            .owl-dots {
+                position: absolute;
+                bottom: 20px;
+                right: 0;
+                left: 0;
+    
+                .owl-dot {
+                    span {
+                        background-color: var(--white-color);
+                    }
+                    &.active, &:hover {
+                        span {
+                            background-color: var(--main-color);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .banner-image2 {
+        height: 400px;
+        margin-top: 55px;
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .banner-image2 {
+        height: 700px;
+        margin-top: 70px;
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .main-banner-content {
+        .content {
+            padding-right: 50px;
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

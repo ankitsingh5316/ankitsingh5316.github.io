@@ -1,0 +1,53 @@
+<!-- <div
+    class="app-download-area ptb-100"
+    style="background-image: url(img/white-bg.jpg);"
+>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5 col-md-12">
+                <div class="app-download-image">
+                    <img src="img/mobile.png" alt="image">
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-12">
+                <div class="app-download-content">
+                    <span class="sub-title">Download App</span>
+                    <h2>Support your customers on the go with our mobile app</h2>
+                    <div class="btn-box">
+                        <a href="#" class="apple-store-btn" target="_blank">
+                            <img src="img/applestore.png" alt="image">
+                            Download on the
+                            <span>Apple Store</span>
+                        </a>
+                        <a href="#" class="play-store-btn" target="_blank">
+                            <img src="img/playstore.png" alt="image">
+                            Get it on
+                            <span>Google Play</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+<!-- What We Do -->
+<div class="features-area pt-100 pb-70 bg-f4f5fe">
+  <div class="container">
+    <div class="section-title">
+      <h2>{{ aboutData?.whatWeDo?.heading }}</h2>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 col-sm-6" *ngFor="let service of aboutData?.whatWeDo?.services">
+        <div class="single-features-box">
+          <div class="icon">
+            <i [class]="service.icon"></i>
+          </div>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

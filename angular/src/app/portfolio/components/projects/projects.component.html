@@ -1,0 +1,228 @@
+<section id="work" class="projects section section--alt" aria-labelledby="work-heading">
+  <div class="container">
+    <div class="section-header section-header--center" appScrollReveal="fade-up">
+      <span class="section-label">Featured Work</span>
+      <h2 id="work-heading" class="section-title">Production projects.</h2>
+      <p class="section-subtitle">
+        Real applications and websites I've built and maintained in production environments.
+      </p>
+    </div>
+
+    <div class="projects-list">
+      @for (project of projects; track project.number; let i = $index) {
+        <article
+          class="project-card"
+          appScrollReveal="fade-up"
+          [revealDelay]="i * 100"
+        >
+          <div class="project-mockup">
+            <div class="mockup-browser card">
+              <div class="mockup-chrome">
+                <div class="browser-dots">
+                  <span class="browser-dot browser-dot--red"></span>
+                  <span class="browser-dot browser-dot--yellow"></span>
+                  <span class="browser-dot browser-dot--green"></span>
+                </div>
+                <span class="mockup-url">{{ mockupHost(project) }}</span>
+              </div>
+              <div class="mockup-screen" [attr.data-preview]="project.preview">
+                @if (project.image) {
+                  <img
+                    class="project-screenshot"
+                    [src]="project.image"
+                    [alt]="project.title + ' — production screenshot'"
+                    width="1200"
+                    height="750"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                } @else {
+                @switch (project.preview) {
+                  @case ('calendar') {
+                    <div class="preview-calendar">
+                      <div class="cal-sidebar">
+                        <div class="cal-nav-item cal-nav-item--active"></div>
+                        <div class="cal-nav-item"></div>
+                        <div class="cal-nav-item"></div>
+                      </div>
+                      <div class="cal-main">
+                        <div class="cal-header"></div>
+                        <div class="cal-grid">
+                          @for (d of [1,2,3,4,5,6,7,8,9,10,11,12]; track d) {
+                            <div class="cal-cell" [class.cal-cell--event]="d === 3 || d === 7 || d === 15"></div>
+                          }
+                        </div>
+                      </div>
+                    </div>
+                  }
+                  @case ('gventure') {
+                    <div class="preview-gventure">
+                      <div class="gv-nav"></div>
+                      <div class="gv-hero"></div>
+                      <div class="gv-cards">
+                        <div class="gv-card"></div>
+                        <div class="gv-card"></div>
+                        <div class="gv-card"></div>
+                      </div>
+                    </div>
+                  }
+                  @case ('clouducaas') {
+                    <div class="preview-cloud">
+                      <div class="cloud-nav"></div>
+                      <div class="cloud-hero">
+                        <div class="cloud-hero-text"></div>
+                        <div class="cloud-hero-img"></div>
+                      </div>
+                      <div class="cloud-features">
+                        <div class="cloud-feat"></div>
+                        <div class="cloud-feat"></div>
+                      </div>
+                    </div>
+                  }
+                  @case ('bharat') {
+                    <div class="preview-bharat">
+                      <div class="bharat-nav"></div>
+                      <div class="bharat-video"></div>
+                      <div class="bharat-content">
+                        <div class="bharat-block"></div>
+                        <div class="bharat-block bharat-block--sm"></div>
+                      </div>
+                    </div>
+                  }
+                  @case ('ringpilot') {
+                    <div class="preview-ringpilot">
+                      <div class="rp-nav"></div>
+                      <div class="rp-hero">
+                        <div class="rp-hero-text">
+                          <div class="rp-line rp-line--lg"></div>
+                          <div class="rp-line rp-line--md"></div>
+                          <div class="rp-cta"></div>
+                        </div>
+                        <div class="rp-hero-visual"></div>
+                      </div>
+                      <div class="rp-section">
+                        <div class="rp-block"></div>
+                        <div class="rp-block"></div>
+                        <div class="rp-block"></div>
+                      </div>
+                    </div>
+                  }
+                  @case ('smschat') {
+                    <div class="preview-smschat">
+                      <div class="sms-header">
+                        <div class="sms-title"></div>
+                        <div class="sms-filters">
+                          <div class="sms-filter"></div>
+                          <div class="sms-filter"></div>
+                          <div class="sms-filter sms-filter--active"></div>
+                        </div>
+                      </div>
+                      <div class="sms-table">
+                        <div class="sms-row sms-row--head">
+                          <span></span><span></span><span></span><span class="sms-badge"></span>
+                        </div>
+                        <div class="sms-row">
+                          <span></span><span></span><span></span><span class="sms-badge sms-badge--green"></span>
+                        </div>
+                        <div class="sms-row">
+                          <span></span><span></span><span></span><span class="sms-badge sms-badge--yellow"></span>
+                        </div>
+                        <div class="sms-row">
+                          <span></span><span></span><span></span><span class="sms-badge sms-badge--green"></span>
+                        </div>
+                      </div>
+                      <div class="sms-pagination"></div>
+                    </div>
+                  }
+                  @case ('zipcapital') {
+                    <div class="preview-zipcapital">
+                      <div class="zip-header"></div>
+                      <div class="zip-form">
+                        <div class="zip-form-row">
+                          <div class="zip-field zip-field--date"></div>
+                          <div class="zip-field zip-field--dropdown"></div>
+                          <div class="zip-field zip-field--search"></div>
+                        </div>
+                        <div class="zip-tags">
+                          <span class="zip-tag"></span>
+                          <span class="zip-tag"></span>
+                          <span class="zip-tag zip-tag--active"></span>
+                          <span class="zip-tag"></span>
+                        </div>
+                      </div>
+                      <div class="zip-results">
+                        <div class="zip-result-row"></div>
+                        <div class="zip-result-row"></div>
+                        <div class="zip-result-row zip-result-row--highlight"></div>
+                      </div>
+                    </div>
+                  }
+                  @case ('freeswitch') {
+                    <div class="preview-freeswitch">
+                      <div class="fs-sidebar">
+                        <div class="fs-logo"></div>
+                        <div class="fs-nav-item fs-nav-item--active"></div>
+                        <div class="fs-nav-item"></div>
+                        <div class="fs-nav-item"></div>
+                        <div class="fs-nav-item"></div>
+                      </div>
+                      <div class="fs-main">
+                        <div class="fs-topbar"></div>
+                        <div class="fs-stats">
+                          <div class="fs-stat-card"></div>
+                          <div class="fs-stat-card"></div>
+                          <div class="fs-stat-card fs-stat-card--highlight"></div>
+                        </div>
+                        <div class="fs-table">
+                          <div class="fs-table-row fs-table-row--head"></div>
+                          <div class="fs-table-row"></div>
+                          <div class="fs-table-row"></div>
+                          <div class="fs-table-row"></div>
+                        </div>
+                      </div>
+                    </div>
+                  }
+                }
+                }
+              </div>
+            </div>
+          </div>
+
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="project-number">{{ project.number }}</span>
+              <span class="badge badge--accent">{{ project.technology }}</span>
+            </div>
+            <h3 class="project-title">{{ project.title }}</h3>
+            <p class="project-desc">{{ project.description }}</p>
+            <div class="project-tags">
+              @for (tag of project.tags; track tag) {
+                <span class="badge">{{ tag }}</span>
+              }
+            </div>
+            @if (project.url) {
+              <a
+                class="project-link project-link--live"
+                [href]="project.url"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit live site
+                <svg class="link-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            } @else {
+              <span class="project-link">
+                Production build
+                <svg class="link-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

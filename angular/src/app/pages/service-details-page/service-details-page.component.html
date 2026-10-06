@@ -1,0 +1,205 @@
+<app-navbar-one />
+
+<app-page-banner
+    [pageTitle]="service?.title || 'Services'"
+    [pageSubTitle]="'Service Details'"
+/>
+
+<!-- Service Details -->
+<div class="service-details ptb-100">
+    <div class="container">
+        <div class="service-details-image">
+            <img src="{{service?.image}}" alt="{{service?.title}}">
+        </div>
+        <div class="service-details-content"> 
+            <!-- Hero Section -->
+                <h3>{{service?.mainContent?.title}}</h3>
+                <p>{{service?.mainContent?.description}}</p>
+
+            <a  href="/contact" class="default-btn">
+                <i class="bx bxs-hot"></i>
+                Contact Us
+                <span></span>
+            </a>
+
+            <!-- Overview -->
+            <h4>{{service?.contactContent?.heading}}</h4>
+            <p>
+                {{service?.contactContent?.description}}
+            </p>
+            <p>
+                {{service?.contactContent?.content}}
+            </p>
+
+            <!-- What We Offer -->
+            <div class="offer-section">
+                <div class="container">
+                    <h2>{{service?.offersContent?.heading}}</h2>
+                    <ul class="offer-list">
+                        <li *ngFor="let step of service?.offersContent?.steps">
+                            <i class="{{ step.icon }}"></i>
+                            <strong>{{step.title}}</strong> {{step.description}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="process-area pt-100 pb-70">
+                <div class="container">
+                    <div class="title-section">
+                    <h2>{{ service?.processContent?.heading }}</h2>
+                    </div>
+                    <div class="row">
+                    <div class="col-md-4" *ngFor="let step of service?.processContent?.steps">
+                        <div class="process-box">
+                        <i class="{{ step.icon }}"></i>
+                        <h3>{{ step.title }}</h3>
+                        <p>{{step.description}}</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <!----Industries We Serve----->
+            <section class="industries-area pt-100 pb-70">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <!-- Left Content -->
+                        <div class="col-md-6">
+                            <div class="industries-content">
+                                <h2>{{service?.industriesContent?.heading}}</h2>
+                                <ul>
+                                    <li *ngFor="let step of service?.industriesContent?.steps">
+                                        <i class="{{ step.icon }}"></i>
+                                        <strong>{{step.title}}</strong> {{step.description}}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Right Image -->
+                        <div class="col-md-6">
+                            <div class="industries-image">
+                                <img
+                                    src={{service?.industriesContent?.images}}
+                                    alt="Industries We Serve"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Why Choose -->
+            <section class="why-choose">
+                <div class="container">
+                    <div class="title-section">
+                        <h2>{{service?.whyChoose?.heading}}</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" *ngFor="let step of service?.whyChoose?.steps">
+                               <div class=" choose-box">
+                                     <i class="{{ step.icon }}"></i>
+                                    <h3>{{step.title}}</h3>
+                                    <p>{{step.description}}</p>
+                               </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Case Studies -->
+            <section class="use-cases">
+                <div class="container">
+                    <h2 class="title-section">{{service?.useCases?.heading}}</h2>
+                    <div class="use-cases-grid">
+                        <!-- Card 1 -->
+                        <div class="use-case-card" *ngFor="let step of service?.useCases?.steps">
+                            <h3>{{step.title}}</h3>
+                            <p>
+                                {{step.description}}
+                            </p>
+                            <!-- <a href="blog" class="btn">Blog Links</a> -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials -->
+            <!-- <h4>{{service?.testiMonials?.heading}}</h4>
+            <blockquote *ngFor="let step of service?.testiMonials?.steps">
+                {{step.quote}}
+                <br /><strong>{{step.author}}</strong>
+            </blockquote> -->
+
+            <!-- <h4>{{ service?.testiMonials?.heading }}</h4>
+            <div class="row">
+                <div 
+                    class="col-md-6" 
+                    *ngFor="let step of service?.testiMonials?.steps">
+                    <div class="card text-center p-4 mt-3 shadow">
+                    <blockquote class="mb-3">
+                        <p>{{ step.quote }}</p>
+                    </blockquote>
+                    <strong>- {{ step.author }}</strong>
+                    </div>
+                </div>
+            </div> -->
+
+            <h4>{{ service?.testiMonials?.heading }}</h4>
+            <div class="row">
+                <div 
+                    class="col-md-6" 
+                    *ngFor="let step of service?.testiMonials?.steps; let i = index">
+                    
+                    <div class="card text-center p-4 mt-3 shadow">
+                    
+                    <!-- Random Person Image -->
+                    <img 
+                        [src]="'https://i.pravatar.cc/150?img=' + (i + 10)" 
+                        alt="{{ step.author }}" 
+                        class="rounded-circle mx-auto mb-3"
+                        width="80" height="80"
+                    />
+
+                    <blockquote class="mb-3">
+                        <p>{{ step.quote }}</p>
+                    </blockquote>
+                    <strong>- {{ step.author }}</strong>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- FAQ -->
+            <h4 class="mt-5">{{service?.faqContent?.heading}}</h4>
+            <p *ngFor="let step of service?.faqContent?.steps">
+                <strong>Q.</strong>{{step.q}}<br />
+                {{step.a}}
+            </p>
+
+            <!-- Call to Action -->
+            <h4>{{service?.ctaContent?.title}}</h4>
+            <p>
+                {{service?.ctaContent?.description}}
+            </p>
+            <a href="/contact" class="default-btn">
+                <i class="bx bxs-hot"></i>
+                 {{service?.ctaContent?.cta}}
+                <span></span>
+            </a>
+
+        </div>
+    </div>
+</div>
+
+<app-subscribe />
+
+<div class="bg-f4f5fe pb-100"></div>
+
+<app-free-trial />
+
+<app-footer />
+
+<app-back-to-top />

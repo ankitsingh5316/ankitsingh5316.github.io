@@ -1,0 +1,291 @@
+<app-navbar-one />
+
+<app-page-banner [pageTitle]="blog?.title || 'Blog Details'" [pageSubTitle]="'Blog Details'" />
+
+<!-- Blog Details -->
+<div class="blog-details-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+                <div class="blog-details-desc">
+                    <div class="article-image">
+                        <img [src]="blog?.image || 'img/blog-image/img1.jpg'" [alt]="blog?.title || 'Blog Image'">
+                    </div>
+
+                    <div class="article-content">
+                        <div class="entry-meta">
+                            <ul>
+                                <li><i class='bx bx-time'></i> <a routerLink=".">{{blog?.date }}</a></li>
+                                <li><i class='bx bx-user'></i> <a routerLink=".">{{blog?.author}}</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-12 col-md-12">
+                            <div class="blog-article">
+                                <div class="article-content">
+                                    <div [innerHTML]="blog?.content"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <ul class="wp-block-gallery columns-3">
+                            <li class="blocks-gallery-item">
+                                <figure>
+                                    <img src="img/blog-image/img8.jpg" alt="image">
+                                </figure>
+                            </li>
+                            <li class="blocks-gallery-item">
+                                <figure>
+                                    <img src="img/blog-image/img7.jpg" alt="image">
+                                </figure>
+                            </li>
+                            <li class="blocks-gallery-item">
+                                <figure>
+                                    <img src="img/blog-image/img9.jpg" alt="image">
+                                </figure>
+                            </li>
+                        </ul>
+                        <h3>Four major elements that we offer:</h3>
+                        <ul class="features-list">
+                            <li><i class='bx bx-check-double'></i> Scientific Skills For getting a better result</li>
+                            <li><i class='bx bx-check-double'></i> Communication Skills to getting in touch</li>
+                            <li><i class='bx bx-check-double'></i> A Career Overview opportunity Available</li>
+                            <li><i class='bx bx-check-double'></i> A good Work Environment For work</li>
+                        </ul>
+                        <h3>Setting the mood with incense</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                            sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
+                            voluptatem.</p>
+                        <h3>The Rise Of Smarketing And Why You Need It</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p> -->
+                    </div>
+
+                    <!-- <div class="article-footer">
+                        <div class="article-tags">
+                            <a routerLink=".">Fashion</a>
+                            <a routerLink=".">Smart</a>
+                            <a routerLink=".">Marketing</a>
+                            <a routerLink=".">Games</a>
+                            <a routerLink=".">Travel</a>
+                        </div>
+                    </div>
+
+                    <div class="jexsa-post-navigation">
+                        <div class="prev-link-wrapper">
+                            <div class="info-prev-link-wrapper">
+                                <a routerLink=".">
+                                    <span class="image-prev">
+                                        <img src="img/blog-image/img2.jpg" alt="image">
+                                        <span class="post-nav-title">Prev</span>
+                                    </span>
+                                    <span class="prev-link-info-wrapper">
+                                        <span class="prev-title">Don't buy a tech gift until you read these rules</span>
+                                        <span class="meta-wrapper">
+                                            <span class="date-post">January 21, 2025</span>
+                                        </span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="next-link-wrapper">
+                            <div class="info-next-link-wrapper">
+                                <a routerLink=".">
+                                    <span class="next-link-info-wrapper">
+                                        <span class="next-title">The golden rule of buying a phone as a gift</span>
+                                        <span class="meta-wrapper">
+                                            <span class="date-post">January 21, 2025</span>
+                                        </span>
+                                    </span>
+                                    <span class="image-next">
+                                        <img src="img/blog-image/img3.jpg" alt="image">
+                                        <span class="post-nav-title">Next</span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <!-- <div class="comments-area">
+                        <h3 class="comments-title">2 Comments:</h3>
+                        <ol class="comment-list">
+                            <li class="comment">
+                                <article class="comment-body">
+                                    <footer class="comment-meta">
+                                        <div class="comment-author vcard">
+                                            <img src="img/author-image/img1.jpg" class="avatar" alt="image">
+                                            <b class="fn">John Jones</b>
+                                            <span class="says">says:</span>
+                                        </div>
+                                        <div class="comment-metadata">
+                                            <a routerLink=".">
+                                                <time>April 24, 2025 at 10:59 am</time>
+                                            </a>
+                                        </div>
+                                    </footer>
+                                    <div class="comment-content">
+                                        <p>Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s,
+                                            when an unknown printer took a galley of type and scrambled it to make a
+                                            type specimen.</p>
+                                    </div>
+                                    <div class="reply">
+                                        <a routerLink="." class="comment-reply-link">Reply</a>
+                                    </div>
+                                </article>
+                                <ol class="children">
+                                    <li class="comment">
+                                        <article class="comment-body">
+                                            <footer class="comment-meta">
+                                                <div class="comment-author vcard">
+                                                    <img src="img/author-image/img2.jpg" class="avatar" alt="image">
+                                                    <b class="fn">Steven Smith</b>
+                                                    <span class="says">says:</span>
+                                                </div>
+                                                <div class="comment-metadata">
+                                                    <a routerLink=".">
+                                                        <time>April 24, 2025 at 10:59 am</time>
+                                                    </a>
+                                                </div>
+                                            </footer>
+                                            <div class="comment-content">
+                                                <p>Lorem Ipsum has been the industry’s standard dummy text ever since
+                                                    the 1500s, when an unknown printer took a galley of type and
+                                                    scrambled it to make a type specimen.</p>
+                                            </div>
+                                            <div class="reply">
+                                                <a routerLink="." class="comment-reply-link">Reply</a>
+                                            </div>
+                                        </article>
+                                    </li>
+                                    <ol class="children">
+                                        <li class="comment">
+                                            <article class="comment-body">
+                                                <footer class="comment-meta">
+                                                    <div class="comment-author vcard">
+                                                        <img src="img/author-image/img3.jpg" class="avatar" alt="image">
+                                                        <b class="fn">Sarah Taylor</b>
+                                                        <span class="says">says:</span>
+                                                    </div>
+                                                    <div class="comment-metadata">
+                                                        <a routerLink=".">
+                                                            <time>April 24, 2025 at 10:59 am</time>
+                                                        </a>
+                                                    </div>
+                                                </footer>
+                                                <div class="comment-content">
+                                                    <p>Lorem Ipsum has been the industry’s standard dummy text ever
+                                                        since the 1500s, when an unknown printer took a galley of type
+                                                        and scrambled it to make a type specimen.</p>
+                                                </div>
+                                                <div class="reply">
+                                                    <a routerLink="." class="comment-reply-link">Reply</a>
+                                                </div>
+                                            </article>
+                                        </li>
+                                    </ol>
+                                </ol>
+                            </li>
+                            <li class="comment">
+                                <article class="comment-body">
+                                    <footer class="comment-meta">
+                                        <div class="comment-author vcard">
+                                            <img src="img/author-image/img4.jpg" class="avatar" alt="image">
+                                            <b class="fn">John Doe</b>
+                                            <span class="says">says:</span>
+                                        </div>
+                                        <div class="comment-metadata">
+                                            <a routerLink=".">
+                                                <time>April 24, 2025 at 10:59 am</time>
+                                            </a>
+                                        </div>
+                                    </footer>
+                                    <div class="comment-content">
+                                        <p>Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s,
+                                            when an unknown printer took a galley of type and scrambled it to make a
+                                            type specimen.</p>
+                                    </div>
+                                    <div class="reply">
+                                        <a routerLink="." class="comment-reply-link">Reply</a>
+                                    </div>
+                                </article>
+                                <ol class="children">
+                                    <li class="comment">
+                                        <article class="comment-body">
+                                            <footer class="comment-meta">
+                                                <div class="comment-author vcard">
+                                                    <img src="img/author-image/img1.jpg" class="avatar" alt="image">
+                                                    <b class="fn">James Anderson</b>
+                                                    <span class="says">says:</span>
+                                                </div>
+                                                <div class="comment-metadata">
+                                                    <a routerLink=".">
+                                                        <time>April 24, 2025 at 10:59 am</time>
+                                                    </a>
+                                                </div>
+                                            </footer>
+                                            <div class="comment-content">
+                                                <p>Lorem Ipsum has been the industry’s standard dummy text ever since
+                                                    the 1500s, when an unknown printer took a galley of type and
+                                                    scrambled it to make a type specimen.</p>
+                                            </div>
+                                            <div class="reply">
+                                                <a routerLink="." class="comment-reply-link">Reply</a>
+                                            </div>
+                                        </article>
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                        <div class="comment-respond">
+                            <h3 class="comment-reply-title">Leave a Reply</h3>
+                            <form class="comment-form">
+                                <p class="comment-notes">
+                                    <span id="email-notes">Your email address will not be published.</span>
+                                    Required fields are marked
+                                    <span class="required">*</span>
+                                </p>
+                                <p class="comment-form-comment">
+                                    <label>Comment</label>
+                                    <textarea name="comment" id="comment" cols="45" rows="5" maxlength="65525"
+                                        required="required"></textarea>
+                                </p>
+                                <p class="comment-form-author">
+                                    <label>Name <span class="required">*</span></label>
+                                    <input type="text" id="author" name="author" required="required">
+                                </p>
+                                <p class="comment-form-email">
+                                    <label>Email <span class="required">*</span></label>
+                                    <input type="email" id="email" name="email" required="required">
+                                </p>
+                                <p class="comment-form-url">
+                                    <label>Website</label>
+                                    <input type="url" id="url" name="url">
+                                </p>
+                                <p class="comment-form-cookies-consent">
+                                    <input type="checkbox" value="yes" name="wp-comment-cookies-consent"
+                                        id="wp-comment-cookies-consent">
+                                    <label for="wp-comment-cookies-consent">Save my name, email, and website in this
+                                        browser for the next time I comment.</label>
+                                </p>
+                                <p class="form-submit">
+                                    <input type="submit" name="submit" id="submit" class="submit" value="Post Comment">
+                                </p>
+                            </form>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <app-widget-sidebar />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-f4f5fe pb-100"></div>
+
+<app-free-trial />
+
+<app-footer />
+
+<app-back-to-top />

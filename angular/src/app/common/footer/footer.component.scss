@@ -1,0 +1,231 @@
+.footer-area {
+    background-color: var(--black-color);
+    position: relative;
+    z-index: 1;
+    padding-top: 80px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        animation: imageChange 1s linear 1s infinite;
+        background: {
+            image: url(../../../../public/img/footer-shape1.png);
+            position: center center;
+            size: cover;
+            repeat: no-repeat;
+        };
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        animation: imageChangeTwo 1s linear 1s infinite;
+        background: {
+            image: url(../../../../public/img/footer-shape2.png);
+            position: center center;
+            size: cover;
+            repeat: no-repeat;
+        };
+    }
+}
+.single-footer-widget {
+    margin-bottom: 30px;
+
+    h3 {
+        color: var(--white-color);
+        margin-bottom: 29px;
+        font: {
+            weight: 500;
+            size: 22px;
+        };
+    }
+    .logo {
+        margin-bottom: 15px;
+
+        a {
+            display: inline-block;
+        }
+    }
+    p {
+        color: #acc5db;
+    }
+    .services-list {
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style-type: none;
+
+        li {
+            color: #acc5db;
+            margin-bottom: 10px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+            a {
+                display: inline-block;
+                color: #acc5db;
+
+                &:hover {
+                    color: var(--main-color);
+                    padding-left: 5px;
+                }
+            }
+        }
+    }
+    .support-list {
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style-type: none;
+
+        li {
+            color: #acc5db;
+            margin-bottom: 10px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+            a {
+                display: inline-block;
+                color: #acc5db;
+
+                &:hover {
+                    color: var(--main-color);
+                    padding-left: 5px;
+                }
+            }
+        }
+    }
+    .footer-contact-info {
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style-type: none;
+
+        li {
+            color: var(--white-color);
+            margin-bottom: 10px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+            a {
+                display: inline-block;
+                color: #acc5db;
+
+                &:hover {
+                    color: var(--main-color);
+                }
+            }
+        }
+    }
+    .social {
+        padding-left: 0;
+        list-style-type: none;
+        margin: {
+            bottom: 0;
+            top: 15px;
+        };
+        li {
+            display: inline-block;
+            margin-right: 5px;
+
+            a {
+                display: block;
+                width: 35px;
+                height: 35px;
+                line-height: 40px;
+                background-color: #4e6e8a;
+                text-align: center;
+                font-size: 25px;
+                border-radius: 2px;
+
+                &:hover {
+                    color: var(--black-color);
+                    background-color: var(--white-color);
+                }
+            }
+        }
+    }
+}
+.copyright-area {
+    border-top: 1px solid #1c2250;
+    text-align: center;
+    margin-top: 50px;
+    padding: {
+        top: 25px;
+        bottom: 25px;
+    };
+    p {
+        line-height: initial;
+        color: #acc5db;
+
+        a {
+            display: inline-block;
+            color: var(--optional-color);
+
+            &:hover {
+                color: var(--main-color);
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .footer-area {
+        padding-top: 60px;
+    }
+    .single-footer-widget {
+        h3 {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        .social {
+            li {
+                a {
+                    width: 32px;
+                    height: 32px;
+                    font-size: 20px;
+                    line-height: 36px;
+                }
+            }
+        }
+    }
+    .copyright-area {
+        margin-top: 30px;
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .single-footer-widget {
+        h3 {
+            margin-bottom: 28px;
+            font-size: 20px;
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

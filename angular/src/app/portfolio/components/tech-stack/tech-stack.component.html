@@ -1,0 +1,44 @@
+<section id="skills" class="tech-stack section" aria-labelledby="skills-heading">
+  <div class="container">
+    <div class="section-header" appScrollReveal="fade-up">
+      <span class="section-label">Tech Stack</span>
+      <h2 id="skills-heading" class="section-title">Frontend Stack</h2>
+      <p class="section-subtitle">
+        Technologies I use to build production-ready web applications.
+      </p>
+    </div>
+
+    <div class="pipeline card" appScrollReveal="fade-up" [revealDelay]="80" aria-hidden="true">
+      @for (step of pipeline; track step; let last = $last; let i = $index) {
+        <span class="pipeline-step" [style.animation-delay.ms]="i * 100">{{ step }}</span>
+        @if (!last) {
+          <svg class="pipeline-arrow" width="20" height="10" viewBox="0 0 20 10" fill="none">
+            <path d="M0 5h16M12 1l4 4-4 4" stroke="currentColor" stroke-width="1.2"/>
+          </svg>
+        }
+      }
+    </div>
+
+    <div class="tech-layout" appScrollReveal="fade-up" [revealDelay]="160">
+      <div class="tech-grid" role="tablist" aria-label="Technologies">
+        @for (tech of techStack; track tech.name) {
+          <button
+            class="tech-chip"
+            [class.active]="activeTech() === tech.name"
+            (click)="selectTech(tech.name)"
+            role="tab"
+            [attr.aria-selected]="activeTech() === tech.name"
+          >
+            {{ tech.name }}
+          </button>
+        }
+      </div>
+
+      <div class="tech-detail card" role="tabpanel">
+        <span class="tech-detail-label">Selected</span>
+        <h3 class="tech-detail-name">{{ activeTech() }}</h3>
+        <p class="tech-detail-desc">{{ activeDescription }}</p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="100" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+    <!-- Phone icon -->
+    <path d="M40 20h40v60H40z" fill="#3498db"/>
+    <path d="M50 30h20v40H50z" fill="white"/>
+    
+    <!-- Call center text -->
+    <text x="100" y="60" font-family="Arial" font-size="24" font-weight="bold" fill="#3498db">
+        FreeCallCenter
+    </text>
+    
+    <!-- Tagline -->
+    <text x="100" y="80" font-family="Arial" font-size="12" fill="#666">
+        Your Free Call Center Solution
+    </text>
+</svg> 

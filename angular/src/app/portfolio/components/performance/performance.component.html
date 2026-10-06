@@ -1,0 +1,47 @@
+<section id="performance" class="performance section" aria-labelledby="performance-heading">
+  <div class="container">
+    <div class="performance-wrap card">
+      <div class="performance-header" appScrollReveal="fade-up">
+        <span class="section-label">Performance</span>
+        <h2 id="performance-heading" class="section-title performance-title">
+          Beautiful is good.<br>
+          <span class="gradient-text">Fast is better.</span>
+        </h2>
+        <p class="section-subtitle">
+          Every project is built with performance, accessibility, and production standards in mind.
+        </p>
+      </div>
+
+      <div class="metrics-grid">
+        @for (metric of metrics; track metric.label; let i = $index) {
+          <div class="metric-card" appScrollReveal="fade-up" [revealDelay]="i * 80">
+            <div class="metric-ring-wrap">
+              <svg class="metric-ring-svg" viewBox="0 0 80 80">
+                <circle cx="40" cy="40" r="34" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="3"/>
+                <circle
+                  class="metric-ring-progress"
+                  cx="40" cy="40" r="34"
+                  fill="none"
+                  stroke="var(--accent)"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-dasharray="180 214"
+                  transform="rotate(-90 40 40)"
+                />
+              </svg>
+              <span class="metric-ring-value">{{ metric.value }}</span>
+            </div>
+            <h3 class="metric-name">{{ metric.label }}</h3>
+            <p class="metric-desc">{{ metric.description }}</p>
+          </div>
+        }
+      </div>
+
+      <div class="features-row" appScrollReveal="fade-up" [revealDelay]="320">
+        @for (feature of features; track feature) {
+          <span class="feature-chip">{{ feature }}</span>
+        }
+      </div>
+    </div>
+  </div>
+</section>

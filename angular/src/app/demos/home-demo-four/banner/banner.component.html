@@ -1,0 +1,69 @@
+<div class="saas-banner">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container max-width-1290">
+                <div class="row align-items-center pt-5">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="saas-image mt-70">
+                            <img src="img/saas-shape/arrow.png" class="animate__animated animate__fadeInDown" alt="arrow">
+                            <img src="img/saas-shape/box1.png" class="animate__animated animate__fadeInUp" alt="box1">
+                            <img src="img/saas-shape/boy1.png" class="animate__animated animate__fadeInLeft" alt="boy1">
+                            <img src="img/saas-shape/boy2.png" class="animate__animated animate__zoomIn" alt="boy2">
+                            <img src="img/saas-shape/boy3.png" class="animate__animated animate__bounceIn" alt="boy3">
+                            <img src="img/saas-shape/digital-screen.png" class="animate__animated animate__fadeInDown" alt="digital-screen">
+                            <img src="img/saas-shape/filter1.png" class="animate__animated animate__zoomIn" alt="filter1">
+                            <img src="img/saas-shape/filter2.png" class="animate__animated animate__fadeInUp" alt="filter2">
+                            <img src="img/saas-shape/filter3.png" class="animate__animated animate__rotateIn" alt="filter3">
+                            <img src="img/saas-shape/girl1.png" class="animate__animated animate__fadeInUp" alt="girl1">
+                            <img src="img/saas-shape/girl2.png" class="animate__animated animate__zoomIn" alt="girl2">
+                            <img src="img/saas-shape/monitor.png" class="animate__animated animate__zoomIn" alt="monitor">
+                            <img src="img/saas-shape/main-image.png" alt="main-image">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="hero-content pl-4">
+                            <h1>Manage your business strategy in one placeholder</h1>
+                            <p>Our passion to work hard and deliver excellent results. It could solve the needs of your customers and develop innovation. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+                            <div class="banner-btn">
+                                <div class="d-flex">
+                                    <a routerLink="/pricing" class="default-btn">
+                                        <i class="bx bxs-hot"></i>
+                                        Get Started 
+                                        <span></span>
+                                    </a>
+                                    <button type="button" class="video-btn popup-youtube" (click)="openPopup()">
+                                        <i class='bx bxs-right-arrow'></i> Watch Video 
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Video Popup -->
+<div
+    class="mfp-wrap mfp-close-btn-in mfp-auto-cursor mfp-fade mfp-ready"
+    *ngIf="isOpen"
+    tabindex="-1"
+>
+    <div class="mfp-container mfp-iframe-holder">
+        <div class="mfp-content">
+            <div class="mfp-iframe-scaler">
+                <button
+                    (click)="closePopup()"
+                    title="Close (Esc)"
+                    type="button"
+                    class="mfp-close"
+                >
+                    ×
+                </button>
+                <iframe src="https://www.youtube.com/embed/_ZppXdKk4c8" title="Introducing Trezo | The Next-Generation Multi-Framework Admin Dashboard Template" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mfp-bg mfp-fade mfp-ready" *ngIf="isOpen"></div>

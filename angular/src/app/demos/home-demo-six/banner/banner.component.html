@@ -1,0 +1,61 @@
+<div class="main-banner">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-7 col-md-12">
+                <div class="main-banner-content">
+                    <div class="d-table">
+                        <div class="d-table-cell">
+                            <div class="content">
+                                <h1>Great startups for connecting people</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+                                <button type="button" class="default-btn" (click)="openPopup()">
+                                    <i class="bx bx-play"></i>
+                                    Watch Video
+                                    <span></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-12">
+                <div
+                    class="banner-image"
+                    style="background-image: url(img/banner-img1.jpg);"
+                >
+                    <app-chat />
+                    <img src="img/banner-img1.jpg" alt="image">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="shape21"><img src="img/shape/shape20.png" alt="image"></div>
+    <div class="shape19"><img src="img/shape/shape18.png" alt="image"></div>
+    <div class="shape22"><img src="img/shape/shape21.png" alt="image"></div>
+    <div class="shape23"><img src="img/shape/shape22.svg" alt="image"></div>
+    <div class="shape24"><img src="img/shape/shape23.png" alt="image"></div>
+</div>
+
+<!-- Video Popup -->
+<div
+    class="mfp-wrap mfp-close-btn-in mfp-auto-cursor mfp-fade mfp-ready"
+    *ngIf="isOpen"
+    tabindex="-1"
+>
+    <div class="mfp-container mfp-iframe-holder">
+        <div class="mfp-content">
+            <div class="mfp-iframe-scaler">
+                <button
+                    (click)="closePopup()"
+                    title="Close (Esc)"
+                    type="button"
+                    class="mfp-close"
+                >
+                    ×
+                </button>
+                <iframe src="https://www.youtube.com/embed/_ZppXdKk4c8" title="Introducing Trezo | The Next-Generation Multi-Framework Admin Dashboard Template" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mfp-bg mfp-fade mfp-ready" *ngIf="isOpen"></div>
